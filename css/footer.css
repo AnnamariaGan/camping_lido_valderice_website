@@ -1,0 +1,40 @@
+.grid-container-footer {
+  /* possibile refactoring come flex (semantica compatibile) */
+    display: flex;
+    flex-wrap: wrap;
+    /*grid-template-columns: auto auto 300px;   /* aggiustare per mobile**/
+    background-color: #1E90FF;
+    padding: 10px;/*pensare a relativizzarlo*/
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    align-self: flex-end;
+  }
+
+  .grid-item-footer {
+    padding: 20px;
+    font-size: 20px;/*non va bene, relativizzare*/
+    text-align: center;
+    flex: 1 1 0;
+  }
+
+/*ricontrollare, eventualmente traformare in .grid-container-footer > h1 etc*/
+  h1{
+    display: block;
+    font-size: 1em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    color: white;
+  }
+
+  h4{
+    text-align: center;
+    font-size: 18px;
+  }
+
+  p{
+    color: white;
+  }

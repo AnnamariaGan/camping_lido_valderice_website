@@ -1,0 +1,62 @@
+  .grid-container-prezzi{
+    display: grid;
+    grid-template-areas: 
+      "c3 c3 d4 d4 e5 e5"  
+      "a1 a1 a1 b2 b2 b2";
+    background-color: white;
+    padding: 5rem; 
+    gap: 2.5rem;
+    justify-content: center;
+  }
+  .a1{grid-area: a1;}
+  .b2{grid-area: b2;}
+  .c3{grid-area: c3;}
+  .d4{grid-area: d4;}
+  .e5{grid-area: e5;}
+
+  .grid-item-prezzi{
+    flex: auto;
+    flex-shrink: 2;
+    padding: 0.75rem;
+    font-size: 1rem;
+    text-align: center;
+    background-color: aliceblue;
+    
+    word-wrap: break-word;
+    /*overflow: hidden;*/
+    text-overflow: ellipsis;
+    /*line-height: 1rem;
+    max-height: 2rem;*/
+  }
+
+
+   
+  .grid-item-prezzi{     /** non riesco a rifermi solo alle immagini sotto quetsa classe*/
+    border: 0.15rem solid dodgerblue;
+    border-radius: 1.5rem;
+    padding: auto;
+    row-gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 .15rem 1rem rgba(3, 14, 25, 0.2), 0 .25rem .5rem rgb(3,3,3,.19);
+  }
+
+  .grid-item-prezzi > h2{
+    color: rgb(182, 42, 42);
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.25em;
+  }
+  h3 {
+    font-size: 0.75em;
+    padding-left: 2.5rem;
+  }
+
+    /* dopo aggiustiamo un po', l immagine la voglio molto piu grande e anche la scritta*/
+.titolo {
+  display: block;
+  background-image: url('../images/campeggio/cortigliolo.webP');
+  height: 400rem;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+}

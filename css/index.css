@@ -1,0 +1,94 @@
+h2, h3 {
+  text-align: center;
+}
+
+#pernottamento, #servizi {
+  margin-bottom: 2rem;
+}
+
+.territorio {
+  display: flex;
+
+  position: relative;
+  z-index: 1;
+
+  height: fit-content;
+  width: 100%;
+  
+  align-items: center;
+  justify-content: center;
+  
+  background-image: url('../images/territorio/egadi.webP');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.territorio-container {
+  display: flex;
+
+  width: 100%;
+  height: 100%;
+  margin: 1.5rem;
+
+  align-items: center;
+  justify-content: center; 
+  
+  position: relative;
+  z-index: 1;
+}
+
+.background-blur-transbox {
+  display: flex;
+  position: absolute;
+  /*top: 1rem;
+  left: 1rem;*/
+  
+  /*margin: 1.5rem;*/
+  width: 100%;
+  height: 100%;
+  
+  /*background-image: url('../images/territorio/egadi.webP');
+  background-position: center; /* Center the image */
+  /*background-repeat: no-repeat; /* Do not repeat the image */
+  /*background-size: cover;*/
+  background-color: rgba(255, 255, 255, 0.55);/*#ffffff;*/
+  /*background: linear-gradient(#ffffff47, #f2f2f270);
+  */
+  backdrop-filter: blur(5px);
+  z-index: 2;
+}
+
+.transbox {
+  display: inline;
+  position: relative;
+  z-index: 3;
+  margin: 2.5%;
+
+  /*margin: 2rem;
+  padding: 1.5rem;*/
+  /*background-color: #ffffff;*/
+ /* border: 1px solid black;*/
+  /*opacity: 0.6;
+  background: linear-gradient(#ffffff47, #f2f2f270);*/
+  /*filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+.transbox p {
+  font-weight: bold;
+  font-family: 'Open Sans';
+  color: #000000;
+  text-align: center;
+  padding: 1rem;
+  /*opacity: 1;*/
+} 
+
+.description {
+  padding: 1rem;
+  font-family: 'Open Sans', sans-serif;
+  text-justify: inter-word;
+}
+
+hr{
+  color: steelblue;
+}

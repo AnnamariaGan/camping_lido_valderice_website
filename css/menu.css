@@ -1,0 +1,194 @@
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+html {
+  height: 100%;
+}
+.content {
+  flex: 1 0 auto;
+}
+
+#logo-topnav {
+  width: 100%;
+  display: block;
+}
+
+.topnav-direction {
+  flex-direction: row;
+}
+
+.topnav {
+  display: flex;
+  gap:1rem;
+  
+  flex-wrap: wrap;
+
+  align-content: space-around;
+  align-items: stretch;
+  justify-items:center;
+
+  text-align: center;
+
+  background-color: #1e90ff;
+}
+
+.topnav-elem {
+  color: #f2f2f2;
+  padding: 0.5rem 0;
+  text-decoration: none;
+  font-size: 2rem;
+  margin: 0;
+  /*eventualmente ridondante*/
+  background-color: #1e90ff;
+  display: block;
+}
+
+.topnav-elem:hover, .topnav-elem:focus-within, .topnav-elem:focus{
+  color: black;
+  background-color: #ddd;
+}
+
+/*
+.topnav-elem:active {
+  color: violet;
+  background-color: greenyellow;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@1&display=swap');
+*/
+#hamburger {
+  opacity: 0;
+  display: none;/*block;
+  width: 100%;*/
+  
+  border: none;
+  padding: 0;
+  margin: 0;
+  float: left;
+  position: absolute;
+  left: 0;
+}
+
+.topnav .hamburger , .topnav-elem-closed , .topnav-elem-open  {
+  display: none;
+}
+.dropdown, .dropdown-2 {
+  position: relative;
+  width: fit-content;
+  display: block;
+  margin: 0;
+  /*serve per il mobile*/
+  align-self: center;
+}
+
+/*.dropdown li {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  /*display: none;* /
+}*/
+
+.drop, .drop-2 {
+  display: none;
+}
+
+.dropdown:hover .drop, .dropdown:focus-within .drop, .dropdown:focus .drop,
+.dropdown-2:hover .drop-2, .dropdown-2:focus-within .drop-2, .dropdown-2:focus .drop-2 {
+  display: block;
+  position: absolute;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  border: 0;
+}
+
+.dropdown-2:hover, .dropdown-2:focus-within, .dropdown-2:focus {
+  /*servizi width fix*/
+  width: 12rem;
+}
+.dropdown:hover, .dropdown:focus-within, .dropdown:focus {
+  /*prenotazione width fix*/
+  width: 15rem;
+}
+
+/*#pernottamento:hover + .dropdown{
+  display: block;
+}*/
+
+@media screen and (max-width: 90em) {
+  .topnav-direction {
+      flex-direction: column;
+      gap: 0;
+  }
+
+  .drop, .drop-2, .drop .topnav-elem,.drop-2 .topnav-elem {
+    background: #0063cb;
+    border-radius: 0 0 25% 25%;
+  }
+
+  .hamburger:checked ~ .topnav-elem-closed,
+  .hamburger:checked ~ .dropdown .topnav-elem-closed,
+  .hamburger:checked ~ .dropdown-2 .topnav-elem-closed {
+      display: block;
+      color: #f2f2f2;
+      padding: 0.5rem 0.5rem;
+      font-size: 2rem;
+      margin: 0;
+  }
+
+  .hamburger:checked ~ .topnav-elem,
+  .hamburger:checked ~ .dropdown .topnav-elem,
+  .hamburger:checked ~ .dropdown-2 .topnav-elem {
+      display: none;
+  }
+
+  .hamburger:checked ~ .topnav-elem-open  {
+      display: none;
+  }
+
+  .topnav-elem-open {
+      display: block;
+      color: #f2f2f2;
+      padding: 0.5rem 0.5rem;
+      font-size: 2rem;
+      margin: 0;
+  }
+  /*.dropdown {
+    display: flex;
+    gap:1rem;
+    
+    flex-wrap: wrap;
+  
+    align-content: space-around;
+    align-items: stretch;
+    justify-items:center;
+  
+    text-align: center;
+  
+  }*/
+
+  .dropdown:hover .drop, .dropdown:focus-within .drop, .dropdown:focus .drop,
+  .dropdown-2:hover .drop-2, .dropdown-2:focus-within .drop-2, .dropdown-2:focus .drop-2 {
+    display: flex;
+    flex-direction: column;
+    gap:0.3rem;
+    
+    flex-wrap: nowrap;
+  
+    align-content: space-around;
+    align-items: stretch;
+    justify-items:center;
+  
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  
+  }
+
+  
+}
+

@@ -1,0 +1,9 @@
+    /* dopo aggiustiamo la scritta*/
+    .titolo {
+        display: block;
+        background-image: url('../images/ristorazione/busiate_padella.webP');
+        height: 15rem;
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-size: cover;
+      }

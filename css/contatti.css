@@ -1,0 +1,51 @@
+.flex-container-contatti {
+    display: flex;
+    /*grid-template-columns: auto auto; /* aggiustare per mobile**/
+    background-color: beige;
+    padding: .5rem;
+    column-gap: 2rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    position: center;
+  }
+  .item-contatti {
+    /*padding: 1rem;*/
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  h1{
+    font-size: 1em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+  }
+
+  h4{
+    text-align: center;
+    font-size: 18px;
+  }
+
+  p{
+    color: white;
+  }
+
+  /* dopo aggiustiamo un po', l immagine la voglio molto piu grande e anche la scritta*/
+.titolo {
+  display: block;
+  background-image: url('../images/campeggio/fiori_camping.webP');
+  height: 25rem;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+ /* background-size: cover;*/
+}
+
+.titolo h1{
+  color :white;
+  font-size: 42px;
+  text-align: center;
+}

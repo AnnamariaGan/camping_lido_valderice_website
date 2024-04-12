@@ -1,0 +1,9 @@
+    /* dopo aggiustiamo un po', l immagine la voglio molto piu grande e anche la scritta*/
+    .titolo {
+        display: block;
+        background-image: url('../images/ristorazione/insalata_mare.webP');
+        height: 100rem;
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-size: cover;
+      }
