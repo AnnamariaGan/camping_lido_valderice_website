@@ -23,25 +23,24 @@
   
     <body>
         <nav>
-            <input type="checkbox" id="menu-toggle" />
-            <label for="menu-toggle" class="hamburger">
-                <div style="display: flex; flex-direction: row;">
-                    <div style="display: flex; flex-direction: column;">
-                        <div class="bar top"></div>
-                        <div class="bar middle"></div>
-                        <div class="bar bottom"></div>
-                    </div>
-                    <a href="index.html" class="topnav-elem">
-                        <h4 style="font-style:oblique;display:inline;margin:0.5rem;font-size:2rem;color: #ff9900; font-family: 'IM Fell English', serif, italic;">Camping Lido Valderice</h4>
-                    </a>
-                </div>
-            </label>            
+            <input type="checkbox" id="menu-toggle" tabindex="0"/>
+            <div class="navbar">
+                <label for="menu-toggle" class="hamburger">
+                    <div class="bar top"></div>
+                    <div class="bar middle"></div>
+                    <div class="bar bottom"></div>
+                </label>
+                <a href="index.html" class="topnav-elem">
+                    <h4 class="logostyle" style="font-style:oblique;display:inline;margin:0.5rem;font-size:2rem;color: #ff9900; font-family: 'IM Fell English', serif, italic;">Camping Lido Valderice</h4>
+                </a> 
+            </div>     
             <ul class="menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="pages/piazzoleCamper.html">Piazzole camper</a></li>
-                <li><a href="pages/piazzoleTende.html">Piazzole tende</a></li>
-                <li><a href="pages/caseMobili.html">Casette</a></li>
-                <li><a href="pages/risto_market.html">Mini Market e Ristorazione</a></li>
+                <li><a href="index.html" class="topnav-elem">Home</a>
+                </li>
+                <li><a href="pages/piazzoleCamper.html" tabindex="0">Piazzole camper</a></li>
+                <li><a href="pages/piazzoleTende.html" tabindex="0">Piazzole tende</a></li>
+                <li><a href="pages/caseMobili.html" tabindex="0">Casette</a></li>
+                <li><a href="pages/risto_market.html" tabindex="0">Mini Market e Ristorazione</a></li>
                 <li><a href="pages/eventi.html">Eventi</a></li>
                 <li><a href="pages/territorio.html">Scopri il territorio</a></li>
                 <li><a href="pages/prezzi.html">Tariffe e offerte</a></li>
@@ -49,7 +48,8 @@
                 
             </ul>
         </nav>
-        <div class="topnav topnav-direction" id="myTopnav" role="navigation">
+
+        <!--div class="topnav topnav-direction" id="myTopnav" role="navigation">
             <a href="index.html" class="topnav-elem">
                 <h4 style="font-style:oblique;display:inline;margin:0.5rem;font-size:2rem;color: #ff9900; font-family: 'IM Fell English', serif, italic;">Camping Lido Valderice</h4>
             </a>
@@ -71,9 +71,9 @@
             <div class="dropdown">
                 <a href="#" class="topnav-elem">Pernottamento</a>
                 <div class="drop">
-                    <a href="pages/piazzoleCamper.html" class="dropdown-elem">Piazzole camper</a><!--style="width: 100%;"-->
-                    <a href="pages/piazzoleTende.html" class="dropdown-elem">Piazzole tende</a><!--style="width: 100%;"-->
-                    <a href="pages/caseMobili.html" class="dropdown-elem">Casette</a><!--style="width: 100%;"-->
+                    <a href="pages/piazzoleCamper.html" class="dropdown-elem">Piazzole camper</a><! --style="width: 100%;"-- >
+                    <a href="pages/piazzoleTende.html" class="dropdown-elem">Piazzole tende</a><! --style="width: 100%;"-- >
+                    <a href="pages/caseMobili.html" class="dropdown-elem">Casette</a><! --style="width: 100%;"-- >
 
                 </div>
             </div>
@@ -87,7 +87,7 @@
             <a href="pages/territorio.html" class="topnav-elem">Scopri il territorio</a>
             <a href="pages/prezzi.html" class="topnav-elem">Tariffe e offerte</a>
             <a href="pages/contatti.html" class="topnav-elem">Contatti</a>
-        </div>
+        </div-->
         
         <section class="content"> 
             <section class="masthead" style="background-image: url(images/entrata.webP);">
