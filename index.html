@@ -15,11 +15,41 @@
         <link href="css/sezione.css" media="screen" rel="stylesheet" type="text/css">
         <link href="css/masthead.css" media="screen" rel="stylesheet" type="text/css">
         <link href="css/footer.css" media="All" rel="stylesheet" type="text/css">
+        
+        <link href="css/newCSSMenu.css" rel="stylesheet" type="text/css" media="screen">
+
         <title>Home Page</title>
     </head>
   
     <body>
-        <div class="topnav topnav-direction" id="myTopnav" role="navigation">
+        <nav>
+            <input type="checkbox" id="menu-toggle" tabindex="0"/>
+            <div class="navbar">
+                <label for="menu-toggle" class="hamburger">
+                    <div class="bar top"></div>
+                    <div class="bar middle"></div>
+                    <div class="bar bottom"></div>
+                </label>
+                <a href="index.html" class="topnav-elem">
+                    <h4 class="logostyle" style="font-style:oblique;display:inline;margin:0.5rem;font-size:2rem;color: #ff9900; font-family: 'IM Fell English', serif, italic;">Camping Lido Valderice</h4>
+                </a> 
+            </div>     
+            <ul class="menu">
+                <li><a href="index.html" class="topnav-elem">Home</a>
+                </li>
+                <li><a href="pages/piazzoleCamper.html" tabindex="0">Piazzole camper</a></li>
+                <li><a href="pages/piazzoleTende.html" tabindex="0">Piazzole tende</a></li>
+                <li><a href="pages/caseMobili.html" tabindex="0">Casette</a></li>
+                <li><a href="pages/risto_market.html" tabindex="0">Mini Market e Ristorazione</a></li>
+                <li><a href="pages/eventi.html">Eventi</a></li>
+                <li><a href="pages/territorio.html">Scopri il territorio</a></li>
+                <li><a href="pages/prezzi.html">Tariffe e offerte</a></li>
+                <li><a href="pages/contatti.html">Contatti</a></li>
+                
+            </ul>
+        </nav>
+
+        <!--div class="topnav topnav-direction" id="myTopnav" role="navigation">
             <a href="index.html" class="topnav-elem">
                 <h4 style="font-style:oblique;display:inline;margin:0.5rem;font-size:2rem;color: #ff9900; font-family: 'IM Fell English', serif, italic;">Camping Lido Valderice</h4>
             </a>
@@ -40,23 +70,24 @@
             <a href="index.html" class="topnav-elem">Home</a>
             <div class="dropdown">
                 <a href="#" class="topnav-elem">Pernottamento</a>
-                <nav class="drop">
-                    <a href="pages/piazzoleCamper.html" class="topnav-elem" style="width: 100%;">Piazzole camper</a>
-                    <a href="pages/piazzoleTende.html" class="topnav-elem" style="width: 100%;">Piazzole tende</a>
-                    <a href="pages/caseMobili.html" class="topnav-elem" style="width: 100%;">Casette</a>
-                </nav>
+                <div class="drop">
+                    <a href="pages/piazzoleCamper.html" class="dropdown-elem">Piazzole camper</a><! --style="width: 100%;"-- >
+                    <a href="pages/piazzoleTende.html" class="dropdown-elem">Piazzole tende</a><! --style="width: 100%;"-- >
+                    <a href="pages/caseMobili.html" class="dropdown-elem">Casette</a><! --style="width: 100%;"-- >
+
+                </div>
             </div>
             <nav class="dropdown-2">
                 <a href="#" class="topnav-elem">Servizi</a> 
-                <nav class="drop-2">
-                    <a href="pages/risto_market.html" class="topnav-elem" style="width: 100%;">Mini Market e Ristorazione</a>
-                    <a href="pages/eventi.html" class="topnav-elem" style="width: 100%;">Eventi</a>
-                </nav>
+                <div class="drop-2">
+                    <a href="pages/risto_market.html" class="dropdown-elem" style="width: 100%;">Mini Market e Ristorazione</a>
+                    <a href="pages/eventi.html" class="dropdown-elem" style="width: 100%;">Eventi</a>
+                </div>
             </nav>
             <a href="pages/territorio.html" class="topnav-elem">Scopri il territorio</a>
             <a href="pages/prezzi.html" class="topnav-elem">Tariffe e offerte</a>
             <a href="pages/contatti.html" class="topnav-elem">Contatti</a>
-        </div>
+        </div-->
         
         <section class="content"> 
             <section class="masthead" style="background-image: url(images/entrata.webp);">
@@ -67,6 +98,7 @@
                      offre un’esperienza unica per tutti coloro che cercano una fuga dalla routine quotidiana.
                     Situato in una posizione centrale, il nostro campeggio è il punto di partenza ideale per esplorare
                      le meraviglie locali, dai pittoreschi paesini alle splendide attrazioni naturali.
+
                     <br>
                     Appena fuori dal vostro rifugio all’aria aperta, 
                     troverete una piccola e incantevole spiaggetta,
@@ -152,9 +184,8 @@
                             <br>
                             E, se ami semplicemente goderti panorami incantevoli, non perdere l'opportunità di ammirare le viste mozzafiato dalle colline circostantio dalle spiagge vicine. 
                         </p>
-                        <!-- attribute align not allowed on element form per la validazione -->
-                        <form action="pages/territorio.html" align = "center">
-                            <button class = "button" type="submit"> EXPLORE </button>  
+                        <form id="exploreForm" action="pages/territorio.html">
+                            <button class="button" type="submit">EXPLORE</button>  
                         </form>
                     </div>    
                 </div>  
