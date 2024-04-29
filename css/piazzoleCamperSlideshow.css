@@ -38,20 +38,22 @@
 
 @keyframes slide {
     0% {
-        transform: translateX(100%);
         z-index: 8;
-        opacity: 1;
+        opacity: 0;
     }
 
-    /* 10% = 1 / number_of_slides */
+    /* 4% ≈ 0.5 / number_of_slides */
+    4% {
+        opacity: 1;
+    }
+    
     10% {
-        transform: translateX(0);
+        /*transform: translateX(0);*/
         z-index: 2;
-        opacity: 1;
+        opacity: 0.5;
     }
 
-    40% {
-        transform: translateX(-100%);
+    30% {
         z-index: 0;
         opacity: 0;
     }
@@ -61,54 +63,83 @@
     animation-name: slide;
     /* animation-duration = unitary-delay * number_of_slides*/
     /*     where unitary-delay = 4s */
-    animation-duration: 40s;
+    animation-duration: 56s;
     animation-delay: 0s;
 }
 
 .slide:nth-child(2) {
     animation-name: slide;
-    animation-duration: 40s;
+    animation-duration: 56s;
     animation-delay: 4s;
 }
 
 .slide:nth-child(3) {
     animation-name: slide;
-    animation-duration: 40s;
+    animation-duration: 56s;
     animation-delay: 8s;
 }
 
 .slide:nth-child(4) {
     animation-name: slide;
-    animation-duration: 40s;
+    animation-duration: 56s;
     animation-delay: 12s;
 }
 
 .slide:nth-child(5) {
     animation-name: slide;
-    animation-duration: 40s;
+    animation-duration: 56s;
     animation-delay: 16s;
 }
 
 .slide:nth-child(6) {
     animation-name: slide;
-    animation-duration: 40s;
+    animation-duration: 56s;
     animation-delay: 20s;
 }
 
 .slide:nth-child(7) {
     animation-name: slide;
-    animation-duration: 40s;
+    animation-duration: 56s;
     animation-delay: 24s;
 }
 
 .slide:nth-child(8) {
     animation-name: slide;
-    animation-duration: 40s;
+    animation-duration: 56s;
     animation-delay: 28s;
 }
 
 .slide:nth-child(9) {
     animation-name: slide;
-    animation-duration: 40s;
+    animation-duration: 56s;
     animation-delay: 32s;
+}
+
+.slide:nth-child(10) {
+    animation-name: slide;
+    animation-duration: 56s;
+    animation-delay: 36s;
+}
+
+.slide:nth-child(11) {
+    animation-name: slide;
+    animation-duration: 56s;
+    animation-delay: 40s;
+}
+
+.slide:nth-child(12) {
+    animation-name: slide;
+    animation-duration: 56s;
+    animation-delay: 44s;
+}
+
+.slide:nth-child(13) {
+    animation-name: slide;
+    animation-duration: 56s;
+    animation-delay: 48s;
+}
+.slide:nth-child(14) {
+    animation-name: slide;
+    animation-duration: 56s;
+    animation-delay: 52s;
 }

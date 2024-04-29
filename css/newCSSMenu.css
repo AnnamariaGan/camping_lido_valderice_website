@@ -94,6 +94,13 @@ body, html {
     height: 0;
 }
 
+#menu-toggle:checked ~ * .topnav-elem {
+    display: none;
+    position: unset;
+    width: 0;
+    height: 0;
+}
+
 .menu li {
     padding: 15px;
     border-top: 1px solid #ddd;
@@ -111,9 +118,9 @@ body, html {
 }
 
 .navbar {
-    /*position: -webkit-sticky; /* For Safari * /
-    position: sticky;*/
-    position: fixed;
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    /*position: fixed;*/
     display: flex;
     flex-direction: row;
     /*flex-flow: row;*/
@@ -124,5 +131,25 @@ body, html {
     z-index: 2000;
     top: 0;
 }
+/*
+.navbar-container {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+}
+*/
 
+.logostyle {
+    font-style: oblique;
+    display: inline;
+    /* margin:0.5rem; */
+    font-size: 7.5vw;
+    color: #ff9900;
+    font-family: 'IM Fell English', serif, italic;
+}
+@media (max-width: 600px) {
+    .logostyle {
+        font-size: 7.5vw; /* Smaller font size for mobile screens */
+    }
+}
 
