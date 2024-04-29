@@ -6,11 +6,36 @@
         <link href="../css/menu.css" rel="stylesheet" type="text/css" media="screen">
         <link href="../css/masthead.css" media="screen" rel="stylesheet" type="text/css">
         <link href="../css/contatti.css" media="All" rel="stylesheet" type="text/css">
-        <link href="../css/footer.css" media="All" rel="stylesheet" type="text/css">
+        <link href="../css/footer.css" rel="stylesheet" type="text/css">
+        <link href="../css/newCSSMenu.css" media="All" rel="stylesheet" type="text/css">
     </head>
 
-    <body>  
-        <nav class="topnav topnav-direction" id="myTopnav" role="navigation">
+    <body>
+        <input type="checkbox" id="menu-toggle" tabindex="0"/>
+        <div class="navbar">
+            <label for="menu-toggle" class="hamburger">
+                <div class="bar top"></div>
+                <div class="bar middle"></div>
+                <div class="bar bottom"></div>
+            </label>
+            <a href="../index.html" class="topnav-elem">
+                <h4 class="logostyle">Camping Lido Valderice</h4>
+                <!--style="font-style:oblique;display:inline;margin:0.5rem;font-size:2rem;color: #ff9900; font-family: 'IM Fell English', serif, italic;"-->
+                <!--img src="svg/logo.svg" alt="Camping Lido Valderice"-->
+            </a> 
+        </div>    
+        <ul class="menu">
+            <li><a href="../index.html">Home</a>
+            </li>
+            <li><a href="piazzoleCamper.html" tabindex="0">Piazzole</a></li>
+            <li><a href="caseMobili.html" tabindex="0">Casette</a></li>
+            <li><a href="risto_market.html" tabindex="0">Mini Market e Ristorazione</a></li>
+            <li><a href="eventi.html" tabindex="0">Eventi</a></li>
+            <li><a href="territorio.html" tabindex="0">Scopri il territorio</a></li>
+            <li><a href="prezzi.html" tabindex="0">Tariffe e offerte</a></li>
+            <li><a href="contatti.html" tabindex="0">Contatti</a></li>
+        </ul>
+        <!--nav class="topnav topnav-direction" id="myTopnav" role="navigation">
             <a href="../index.html" class="topnav-elem">
                 <h4 style="font-style:oblique;display:inline;margin:0.5rem;font-size:2rem;color: #ff9900; font-family: 'IM Fell English', serif, italic;">Camping Lido Valderice</h4>
             </a>
@@ -47,7 +72,7 @@
             <a href="territorio.html" class="topnav-elem">Scopri il territorio</a>
             <a href="prezzi.html" class="topnav-elem">Tariffe e offerte</a>
             <a href="contatti.html" class="topnav-elem">Contatti</a>
-        </nav>
+        </nav-->
         
         <section class="masthead" style="background-image: url(../images/polifemo.webp);" role="img" aria-label="Foto interno campeggio, particolare" alt="Foto interno campeggio">
             <h1>Contatti </h1>
@@ -78,7 +103,7 @@
         <footer>
             <div class="grid-container-footer">
                 <div class="grid-item-footer">
-                    <img src="../images/logo.webp" alt="logo" height = "200px"  width= "200px">
+                    <img src="images/logo.webp" alt="logo" height = "200px"  width= "200px">
                 </div>
 
                 <div class="grid-item-footer">
@@ -90,9 +115,9 @@
 
                 <div class="grid-item-footer">
                     <h1>SEGUICI SUI SOCIAL</h1>
-                    <a href="https://www.facebook.com/camping.lidovalderice"><img src="../images/social/fblogo.webp" alt="Logo facebook" width = "20%" style="position: relative"> </a>
+                    <a href="https://www.facebook.com/camping.lidovalderice"><img src="images/social/fblogo.webp" alt="Logo facebook" width = "20%" style="position: relative"> </a>
                     <br>
-                    <a href="https://www.instagram.com/campinglidovalderice/"><img src="../images/social/instalogo.svg" alt="Logo instagram" width = "20%"  style="position: relative"> </a> 
+                    <a href="https://www.instagram.com/campinglidovalderice/"><img src="images/social/instalogo.svg" alt="Logo instagram" width = "20%"  style="position: relative"> </a> 
                 </div>
             </div> 
             <div>
