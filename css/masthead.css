@@ -34,4 +34,34 @@
     align-items: flex-start;
     margin-left: 1rem;
   }
+
+  .hero-image-container {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    /*height: 100vh; /* Set the height to 100% of the viewport */
+    background-size: cover;
+    background-position: center;
+    /*background-image: url("images/hero-image.jpg");*/
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-image-container img {
+    width: 100%;
+    height: auto;
+    min-height: 30vh;
+    max-height: 60vh;
+    object-fit: fill;
+  }
+  
+  /*
+  @media only screen and (max-width: 768px) {
+    .hero-image-container {
+      height: 60vh; /* Adjust the height for smaller screens * /
+    }
+  } */
   

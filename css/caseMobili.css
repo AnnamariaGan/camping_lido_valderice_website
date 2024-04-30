@@ -1,7 +1,7 @@
   /* dopo aggiustiamo un po', l immagine la voglio molto piu grande e anche la scritta*/
   .titolo {
     display: block;
-    background-image: url('../images/casaMobile/casaMobile.webP');
+    background-image: url('../images/casaMobile.webp');
     height: 200rem;
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */

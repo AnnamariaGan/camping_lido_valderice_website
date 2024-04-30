@@ -37,7 +37,7 @@
   /* dopo aggiustiamo un po', l immagine la voglio molto piu grande e anche la scritta*/
 .titolo {
   display: block;
-  background-image: url('../images/campeggio/fiori_camping.webP');
+  background-image: url('../images/campeggio/fiori_camping.webp');
   height: 25rem;
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
