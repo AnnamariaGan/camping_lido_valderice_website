@@ -1,0 +1,165 @@
+/*.grid-container-prezzi {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* Define the number of columns * /
+    grid-template-areas: 
+      "c3 c3 d4 d4 e5 e5"  
+      "a1 a1 a1 b2 b2 b2";
+    background-color: white;
+    padding: 5rem; 
+    gap: 2.5rem;
+    justify-content: center;
+  }
+  
+  /* Responsive adjustments * /
+  @media (max-width: 768px) {
+    .grid-container-prezzi {
+      grid-template-columns: repeat(3, 1fr); /* Fewer columns for smaller screens * /
+      grid-template-areas:
+        "c3 c3 c3"
+        "d4 d4 d4"
+        "e5 e5 e5"
+        "a1 a1 a1"
+        "b2 b2 b2";
+    }
+  }
+  
+  .a1 { grid-area: a1; }
+  .b2 { grid-area: b2; }
+  .c3 { grid-area: c3; }
+  .d4 { grid-area: d4; }
+  .e5 { grid-area: e5; }
+  
+  .grid-item-prezzi {
+    padding: 0.75rem;
+    font-size: 1rem;
+    text-align: center;
+    background-color: aliceblue;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    border: 0.15rem solid dodgerblue;
+    border-radius: 1.5rem;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 0.15rem 1rem rgba(3, 14, 25, 0.2), 0 0.25rem 0.5rem rgb(3, 3, 3, 0.19);
+  }
+  
+  .grid-item-prezzi > h2 {
+    color: rgb(182, 42, 42);
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.25em;
+  }
+  
+  h3 {
+    font-size: 0.75em;
+    padding-left: 2.5rem;
+  }
+  
+  .titolo {
+    display: block;
+    background-image: url('../images/campeggio/cortigliolo.webp');
+    height: 40rem; /* Adjusted from 400rem to 40rem * /
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .grid-container-prezzi {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.grid-item-prezzi {
+    background-color: yellow;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.grid-item-prezzi h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.grid-item-prezzi p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+td:first-child {
+    font-weight: bold;
+}
+*/
+:root {
+    --primary-bg-color: #ffffe0; /* Light yellow */
+    --text-color: #333;
+    --primary-accent-color: #ffaf40; /* Soft orange for buttons or highlights */
+    --price-font-size: 24px;
+    --normal-font-size: 16px;
+}
+
+.grid-container-prezzi {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.grid-item-prezzi {
+    background-color: var(--primary-bg-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.grid-item-prezzi h2 {
+    margin-top: 0;
+    color: var(--text-color);
+}
+
+.grid-item-prezzi p {
+    margin: 10px 0;
+    font-size: var(--normal-font-size);
+}
+
+.price {
+    font-weight: bold;
+    font-size: var(--price-font-size);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+td:first-child {
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .grid-container-prezzi {
+        grid-template-columns: 1fr; /* Stack grid items on smaller screens */
+    }
+}
+
+  
