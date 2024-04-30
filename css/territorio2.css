@@ -1,0 +1,31 @@
+#section-territorio .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#section-territorio .column {
+    display: flex;
+    flex-basis: 100%; /* Take full width to clearly demonstrate the layout switch */
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#section-territorio .column img {
+    width: 45%; /* Control the image size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+#section-territorio .column .text {
+    width: 50%; /* Allocate space for the text */
+    padding: 10px;
+}
+
+/* Styling for odd/even child specificity */
+/*#section-territorio .column:nth-child(odd) {
+    flex-direction: row-reverse; /* Text on the left, image on the right * /
+}*/
+
+#section-territorio .column:nth-child(even) {
+    flex-direction: row; /* Image on the left, text on the right */
+}
