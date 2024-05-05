@@ -88,7 +88,6 @@ h3 {
 
 .transbox p {
   font-weight: bold;
-  font-family: 'Open Sans';
   color: #000000;
   text-align: start;
   padding: 1rem;
@@ -97,7 +96,7 @@ h3 {
 
 .description {
   padding: 1rem;
-  font-family: 'Open Sans', sans-serif;
+  font-family: sans-serif;
   text-justify: inter-word;
 }
 

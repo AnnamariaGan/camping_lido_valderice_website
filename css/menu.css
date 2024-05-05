@@ -57,14 +57,6 @@ html {
   background-color: #ddd;
 }
 
-/*
-.topnav-elem:active {
-  color: violet;
-  background-color: greenyellow;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@1&display=swap');
-*/
 #hamburger {
   opacity: 0;
   display: none;/*block;*/
