@@ -106,7 +106,7 @@ td:first-child {
 }
 */
 :root {
-    --primary-bg-color: #ffffe0; /* Light yellow */
+    --primary-bg-color: #bfe7d0; /* verdino */
     --text-color: #333;
     --primary-accent-color: #ffaf40; /* Soft orange for buttons or highlights */
     --price-font-size: 24px;

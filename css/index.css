@@ -98,8 +98,9 @@ h3 {
   padding: 1rem;
   font-family: sans-serif;
   text-justify: inter-word;
+  color: #333333;
 }
 
-hr{
+hr {
   color: steelblue;
 }
