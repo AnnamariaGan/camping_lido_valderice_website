@@ -52,10 +52,10 @@
 
   .hero-image-container img {
     width: 100%;
-    height: auto;
-    min-height: 30vh;
-    max-height: 60vh;
-    object-fit: fill;
+    max-height: 50vh;
+    /*min-height: 30vh;
+    max-height: 60vh;*/
+    object-fit:scale-down;
   }
   
   /*
