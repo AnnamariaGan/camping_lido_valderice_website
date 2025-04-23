@@ -35,9 +35,22 @@
         .card {
             margin: 1rem;
         }
+    }
 
-        @media (width < 768px) {
-            width: 500vw;
+    @media (max-width: 768px) {
+        .image-gallery-wrapper {
+            display: flex;
+            flex-direction: column;
+            padding: 0.5rem;
+            gap: 1rem;
+        }
+    
+        .image-gallery-wrapper img {
+            width: 100% !important;
+            height: auto !important;
+            object-fit: cover;
+            --rows: 1;
+            --cols: 1;
         }
     }
 }
