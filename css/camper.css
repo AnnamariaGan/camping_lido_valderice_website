@@ -94,3 +94,39 @@
   .demo:hover {
     opacity: 1;
   }
+
+  .column-zanzara {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 1px;
+    padding: 1rem;
+    justify-items: center;
+  }
+  
+  .column-zanzara img {
+    width: 50%;
+    height: auto;
+    display: block;
+  }
+  
+  .zanz2 {
+    padding-right: 30%;
+  }
+  
+  @media (max-width: 600px) {
+    .column-zanzara {
+      grid-template-columns: 1fr;
+    }
+  
+    .zanz1 { grid-area: 1 / 1 / 2 / 2; } 
+  
+    .zanz2 { 
+      grid-area: 2 / 1 / 3 / 2;
+      padding: 0;
+    }
+  }
+
+  hr {
+    color: green;
+  }
