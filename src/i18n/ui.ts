@@ -16,7 +16,6 @@ const it = {
       piazzole: 'Piazzole camper e tende',
       casette: 'Case mobili',
       ristorazione: 'Mini market e ristorazione',
-      eventi: 'Eventi',
       territorio: 'Scopri il territorio',
       prezzi: 'Tariffe e offerte',
       contatti: 'Contatti',
@@ -28,8 +27,6 @@ const it = {
         'Case mobili con 4-5 posti letto, veranda attrezzata, angolo cottura e climatizzatore: la soluzione comoda per famiglie e gruppi di amici.',
       ristorazione:
         'Minimarket con cornetti appena sfornati e servizio di ristorazione con i piatti tipici siciliani: busiate, pesce fresco e specialità locali.',
-      eventi:
-        'Raduni, feste e serate al Camping Lido Valderice: scopri gli eventi passati e le iniziative in programma durante la stagione estiva.',
       territorio:
         'Erice, Macari, le saline di Trapani, Monte Cofano, Mozia, Segesta, Scopello e le isole Egadi: cosa visitare intorno al campeggio.',
       prezzi:
@@ -42,7 +39,6 @@ const it = {
       piazzole: 'Piazzole ombreggiate per camper e tende',
       casette: 'Casa mobile con veranda',
       ristorazione: 'Il minimarket del campeggio',
-      eventi: 'Raduno di camper durante un evento',
       territorio: 'Veduta della riserva di Monte Cofano e del golfo di Macari',
       prezzi: 'Panorama notturno su Trapani e le saline visto da Erice',
       contatti: 'Cala rocciosa con vista sul mare vicino al campeggio',
@@ -54,7 +50,6 @@ const it = {
     piazzole: 'Piazzole',
     casette: 'Casette',
     ristorazione: 'Ristorazione e market',
-    eventi: 'Eventi',
     territorio: 'Scopri il territorio',
     prezzi: 'Tariffe e offerte',
     contatti: 'Contatti',
@@ -101,7 +96,6 @@ const it = {
       piazzole: { label: 'Piazzole camper e tende', alt: 'Piazzole ombreggiate per camper e tende' },
       casette: { label: 'Casette', alt: 'Casa mobile con veranda' },
       ristorazione: { label: 'Mini market e ristorazione', alt: 'Il minimarket del campeggio' },
-      eventi: { label: 'Eventi', alt: 'Raduno di camper durante un evento' },
     },
     territoryKicker: 'Cosa visitare?',
     territoryTitle: 'Trapani: città tra due mari!',
@@ -184,22 +178,6 @@ const it = {
       'Insalata di mare',
       'Sarde alla siciliana',
       'Il bancone del minimarket',
-    ],
-  },
-  eventi: {
-    heading: 'Aprile 2025 con Traiano Camper Club',
-    text: "Durante il periodo di Pasqua, Pasquetta e il 25 aprile abbiamo trascorso splendide giornate al camping insieme al Traiano Camper Club. Tra momenti di relax, pranzi all'aperto e tante risate, abbiamo vissuto un'atmosfera di vera amicizia e condivisione. Un grande ringraziamento va a Michele, Rosetta e a tutto lo staff del campeggio per l'accoglienza, la disponibilità e l'impegno che hanno reso questo evento ancora più speciale. È stata un'esperienza piena di allegria, con il piacere di stare insieme e creare nuovi ricordi indimenticabili.",
-    galleryAlt: [
-      'Camper del Traiano Camper Club in piazzola',
-      'Pranzo all’aperto durante il raduno',
-      'Camper in fila nel viale del campeggio',
-      'Momento di convivialità al campeggio',
-      'Camper parcheggiati tra il verde',
-      'Il gruppo del Traiano Camper Club',
-      'Tavolata durante l’evento',
-      'Camper sul lungomare',
-      'Sorridere insieme al campeggio',
-      'Raduno di camper vista dall’alto',
     ],
   },
   territorio: {
@@ -304,7 +282,6 @@ const en: Ui = {
       piazzole: 'Camper and tent pitches',
       casette: 'Mobile homes',
       ristorazione: 'Mini market and restaurant',
-      eventi: 'Events',
       territorio: 'Discover the area',
       prezzi: 'Rates and offers',
       contatti: 'Contacts',
@@ -316,8 +293,6 @@ const en: Ui = {
         'Mobile homes sleeping 4-5 people with an equipped veranda, kitchenette and air conditioning: the comfortable choice for families and friends.',
       ristorazione:
         'Mini market with freshly baked croissants and a restaurant service serving Sicilian specialities: busiate, fresh fish and local dishes.',
-      eventi:
-        'Rallies, parties and evenings at Camping Lido Valderice: discover past events and what is planned during the summer season.',
       territorio:
         'Erice, Macari, the Trapani salt pans, Monte Cofano, Mozia, Segesta, Scopello and the Egadi Islands: what to visit around the campsite.',
       prezzi:
@@ -330,7 +305,6 @@ const en: Ui = {
       piazzole: 'Shaded pitches for campers and tents',
       casette: 'Mobile home with veranda',
       ristorazione: 'The campsite mini market',
-      eventi: 'Campervan rally during an event',
       territorio: 'View of the Monte Cofano nature reserve and the gulf of Macari',
       prezzi: 'Night view over Trapani and the salt pans seen from Erice',
       contatti: 'Rocky cove with a view of the sea near the campsite',
@@ -342,7 +316,6 @@ const en: Ui = {
     piazzole: 'Pitches',
     casette: 'Cabins',
     ristorazione: 'Food and market',
-    eventi: 'Events',
     territorio: 'Discover the area',
     prezzi: 'Rates and offers',
     contatti: 'Contacts',
@@ -388,7 +361,6 @@ const en: Ui = {
       piazzole: { label: 'Camper and tent pitches', alt: 'Shaded pitches for campers and tents' },
       casette: { label: 'Cabins', alt: 'Mobile home with veranda' },
       ristorazione: { label: 'Mini market and restaurant', alt: 'The campsite mini market' },
-      eventi: { label: 'Events', alt: 'Campervan rally during an event' },
     },
     territoryKicker: 'What to visit?',
     territoryTitle: 'Trapani: a city between two seas!',
@@ -471,22 +443,6 @@ const en: Ui = {
       'Seafood salad',
       'Sicilian-style sardines',
       'The mini market counter',
-    ],
-  },
-  eventi: {
-    heading: 'April 2025 with the Traiano Camper Club',
-    text: "During Easter, Easter Monday and 25 April we spent wonderful days at the campsite together with the Traiano Camper Club. Between moments of relaxation, outdoor lunches and plenty of laughter, we enjoyed an atmosphere of true friendship and sharing. A big thank-you goes to Michele, Rosetta and the whole campsite staff for the welcome, availability and dedication that made this event even more special. It was a joyful experience, with the pleasure of being together and creating unforgettable new memories.",
-    galleryAlt: [
-      'Traiano Camper Club campers on their pitches',
-      'Outdoor lunch during the rally',
-      'Campers lined up along the campsite avenue',
-      'A moment of conviviality at the campsite',
-      'Campers parked among the greenery',
-      'The Traiano Camper Club group',
-      'A long table during the event',
-      'Campers along the seafront',
-      'Smiling together at the campsite',
-      'Camper rally seen from above',
     ],
   },
   territorio: {
@@ -589,7 +545,6 @@ const de: Ui = {
       piazzole: 'Wohnmobil- und Zeltplätze',
       casette: 'Mobilheime',
       ristorazione: 'Minimarkt und Gastronomie',
-      eventi: 'Veranstaltungen',
       territorio: 'Die Umgebung entdecken',
       prezzi: 'Preise und Angebote',
       contatti: 'Kontakt',
@@ -601,8 +556,6 @@ const de: Ui = {
         'Mobilheime für 4-5 Personen mit möblierter Veranda, Kochnische und Klimaanlage: die komfortable Lösung für Familien und Freundesgruppen.',
       ristorazione:
         'Minimarkt mit frisch gebackenen Cornetti und Gastronomie mit sizilianischen Spezialitäten: Busiate, frischer Fisch und lokale Gerichte.',
-      eventi:
-        'Treffen, Feste und Abende im Camping Lido Valderice: entdecken Sie vergangene Veranstaltungen und das Programm der Sommersaison.',
       territorio:
         'Erice, Macari, die Salinen von Trapani, Monte Cofano, Mozia, Segesta, Scopello und die Ägadischen Inseln: Ausflugsziele rund um den Campingplatz.',
       prezzi:
@@ -615,7 +568,6 @@ const de: Ui = {
       piazzole: 'Schattige Stellplätze für Wohnmobile und Zelte',
       casette: 'Mobilheim mit Veranda',
       ristorazione: 'Der Minimarkt des Campingplatzes',
-      eventi: 'Wohnmobil-Treffen während einer Veranstaltung',
       territorio: 'Blick auf das Naturschutzgebiet Monte Cofano und den Golf von Macari',
       prezzi: 'Nachtblick über Trapani und die Salinen von Erice aus gesehen',
       contatti: 'Felsbucht mit Meerblick in der Nähe des Campingplatzes',
@@ -627,7 +579,6 @@ const de: Ui = {
     piazzole: 'Stellplätze',
     casette: 'Hütten',
     ristorazione: 'Essen und Markt',
-    eventi: 'Veranstaltungen',
     territorio: 'Die Umgebung entdecken',
     prezzi: 'Preise und Angebote',
     contatti: 'Kontakt',
@@ -674,7 +625,6 @@ const de: Ui = {
       piazzole: { label: 'Wohnmobil- und Zeltplätze', alt: 'Schattige Stellplätze für Wohnmobile und Zelte' },
       casette: { label: 'Hütten', alt: 'Mobilheim mit Veranda' },
       ristorazione: { label: 'Minimarkt und Gastronomie', alt: 'Der Minimarkt des Campingplatzes' },
-      eventi: { label: 'Veranstaltungen', alt: 'Wohnmobil-Treffen während einer Veranstaltung' },
     },
     territoryKicker: 'Was gibt es zu besuchen?',
     territoryTitle: 'Trapani: eine Stadt zwischen zwei Meeren!',
@@ -757,22 +707,6 @@ const de: Ui = {
       'Meeressalat',
       'Sardinen auf sizilianische Art',
       'Die Theke des Minimarkts',
-    ],
-  },
-  eventi: {
-    heading: 'April 2025 mit dem Traiano Camper Club',
-    text: 'Während Ostern, Ostermontag und dem 25. April haben wir wunderschöne Tage auf dem Campingplatz zusammen mit dem Traiano Camper Club verbracht. Zwischen Entspannung, Picknicks im Freien und viel Lachen erlebten wir eine Atmosphäre echter Freundschaft und Gemeinschaft. Ein großes Dankeschön an Michele, Rosetta und das gesamte Team des Campingplatzes für die Gastfreundschaft, die Hilfsbereitschaft und den Einsatz, die diese Veranstaltung noch besonderer machten. Es war ein fröhliches Erlebnis – mit der Freude, zusammen zu sein und unvergessliche neue Erinnerungen zu schaffen.',
-    galleryAlt: [
-      'Wohnmobile des Traiano Camper Club auf den Stellplätzen',
-      'Mittagessen im Freien während des Treffens',
-      'Wohnmobile in Reihe entlang der Allee',
-      'Moment der Geselligkeit auf dem Campingplatz',
-      'Wohnmobile im Grünen geparkt',
-      'Die Gruppe des Traiano Camper Club',
-      'Gedeckte Tafel während der Veranstaltung',
-      'Wohnmobile an der Uferpromenade',
-      'Gemeinsames Lachen auf dem Campingplatz',
-      'Wohnmobil-Treffen aus der Vogelperspektive',
     ],
   },
   territorio: {
@@ -875,7 +809,6 @@ const fr: Ui = {
       piazzole: 'Emplacements camping-cars et tentes',
       casette: 'Mobile-homes',
       ristorazione: 'Mini-market et restauration',
-      eventi: 'Événements',
       territorio: 'Découvrir la région',
       prezzi: 'Tarifs et offres',
       contatti: 'Contacts',
@@ -887,8 +820,6 @@ const fr: Ui = {
         'Mobile-homes de 4 à 5 couchages avec véranda équipée, coin cuisine et climatisation : la solution confortable pour familles et groupes d’amis.',
       ristorazione:
         'Mini-market avec cornettis tout juste sortis du four et restauration de spécialités siciliennes : busiate, poisson frais et plats locaux.',
-      eventi:
-        'Rassemblements, fêtes et soirées au Camping Lido Valderice : découvrez les événements passés et le programme de la saison estivale.',
       territorio:
         'Erice, Macari, les salines de Trapani, le Monte Cofano, Mozia, Ségeste, Scopello et les îles Égades : que visiter autour du camping.',
       prezzi:
@@ -901,7 +832,6 @@ const fr: Ui = {
       piazzole: 'Emplacements ombragés pour camping-cars et tentes',
       casette: 'Mobile-home avec véranda',
       ristorazione: 'Le mini-market du camping',
-      eventi: 'Rassemblement de camping-cars lors d’un événement',
       territorio: 'Vue sur la réserve du Monte Cofano et le golfe de Macari',
       prezzi: 'Vue nocturne sur Trapani et les salines depuis Erice',
       contatti: 'Crique rocheuse avec vue sur la mer près du camping',
@@ -913,7 +843,6 @@ const fr: Ui = {
     piazzole: 'Emplacements',
     casette: 'Bungalows',
     ristorazione: 'Restauration et market',
-    eventi: 'Événements',
     territorio: 'Découvrir la région',
     prezzi: 'Tarifs et offres',
     contatti: 'Contacts',
@@ -960,7 +889,6 @@ const fr: Ui = {
       piazzole: { label: 'Emplacements camping-cars et tentes', alt: 'Emplacements ombragés pour camping-cars et tentes' },
       casette: { label: 'Bungalows', alt: 'Mobile-home avec véranda' },
       ristorazione: { label: 'Mini-market et restauration', alt: 'Le mini-market du camping' },
-      eventi: { label: 'Événements', alt: 'Rassemblement de camping-cars lors d’un événement' },
     },
     territoryKicker: 'Que visiter ?',
     territoryTitle: 'Trapani : une ville entre deux mers !',
@@ -1043,22 +971,6 @@ const fr: Ui = {
       'Salade de fruits de mer',
       'Sardines à la sicilienne',
       'Le comptoir du mini-market',
-    ],
-  },
-  eventi: {
-    heading: 'Avril 2025 avec le Traiano Camper Club',
-    text: "Pendant Pâques, le lundi de Pâques et le 25 avril, nous avons passé de magnifiques journées au camping avec le Traiano Camper Club. Entre moments de détente, déjeuners en plein air et beaucoup de rires, nous avons vécu une atmosphère de véritable amitié et de partage. Un grand merci à Michele, Rosetta et à tout le staff du camping pour l'accueil, la disponibilité et l'engagement qui ont rendu cet événement encore plus spécial. Ce fut une expérience pleine de joie, avec le plaisir d'être ensemble et de créer de nouveaux souvenirs inoubliables.",
-    galleryAlt: [
-      'Camping-cars du Traiano Camper Club sur leurs emplacements',
-      'Déjeuner en plein air pendant le rassemblement',
-      'Camping-cars alignés le long de l’allée du camping',
-      'Moment de convivialité au camping',
-      'Camping-cars garés dans la verdure',
-      'Le groupe du Traiano Camper Club',
-      'Grande tablée pendant l’événement',
-      'Camping-cars le long du front de mer',
-      'Sourires partagés au camping',
-      'Rassemblement de camping-cars vu du ciel',
     ],
   },
   territorio: {

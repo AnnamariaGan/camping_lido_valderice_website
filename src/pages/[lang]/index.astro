@@ -10,7 +10,6 @@ import zanzara from '../../assets/zanzara.webp';
 import cardPiazzole from '../../assets/card-piazzole.webp';
 import cardCasette from '../../assets/card-casette.webp';
 import cardMarket from '../../assets/card-market.webp';
-import cardEventi from '../../assets/card-eventi.webp';
 
 export function getStaticPaths() {
   return locales.map((lang) => ({ params: { lang }, props: { lang } }));
@@ -30,7 +29,6 @@ const stayCards = [
 ];
 const serviceCards = [
   { href: 'ristorazione', img: cardMarket, label: u.home.cards.ristorazione.label, alt: u.home.cards.ristorazione.alt },
-  { href: 'eventi', img: cardEventi, label: u.home.cards.eventi.label, alt: u.home.cards.eventi.alt },
 ];
 ---
 

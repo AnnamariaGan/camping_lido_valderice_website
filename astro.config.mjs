@@ -32,7 +32,7 @@ export default defineConfig({
     '/pages/piazzoleTende2.html': '/it/piazzole/',
     '/pages/caseMobili.html': '/it/case-mobili/',
     '/pages/risto_market.html': '/it/risto-market/',
-    '/pages/eventi.html': '/it/eventi/',
+    '/pages/eventi.html': '/it/',
     '/pages/territorio.html': '/it/territorio/',
     '/pages/prezzi.html': '/it/prezzi/',
     '/pages/contatti.html': '/it/contatti/',

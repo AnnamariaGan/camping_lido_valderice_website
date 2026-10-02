@@ -41,7 +41,6 @@ export const routes = {
   piazzole: 'piazzole',
   casette: 'case-mobili',
   ristorazione: 'risto-market',
-  eventi: 'eventi',
   territorio: 'territorio',
   prezzi: 'prezzi',
   contatti: 'contatti',
