@@ -20,8 +20,7 @@ PORT=4323
 BASE="http://127.0.0.1:${PORT}"
 OUT="lighthouse"
 CHROME_GLOB="$HOME/.cache/puppeteer/chrome/linux-*/chrome-linux64/chrome"
-BLOCKED="https://cloud.umami.is/*"
-CHROME_FLAGS=(--headless=new --no-sandbox --disable-gpu --disable-dev-shm-usage)
+CHROME_FLAGS=(--headless=new --no-sandbox --disable-gpu --disable-dev-shm-usage --host-resolver-rules=MAP\ cloud.umami.is\ ~NOTFOUND,MAP\ gateway.umami.is\ ~NOTFOUND)
 
 # 1. Dependencies straight from the lockfile.
 npm ci --no-audit --no-fund >/dev/null 2>&1
@@ -84,7 +83,6 @@ for i in "${!PAGES[@]}"; do
     --output-path="$OUT/page-$i.json" \
     --only-categories=performance,accessibility,best-practices,seo \
     --chrome-flags="${CHROME_FLAGS[*]} --user-data-dir=$TMP_CHROME_DIR" \
-    --blocked-urls="$BLOCKED" \
     >/dev/null
 done
 
