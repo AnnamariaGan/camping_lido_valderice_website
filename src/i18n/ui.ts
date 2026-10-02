@@ -66,7 +66,8 @@ const it = {
     social: 'Seguici sui social',
     facebookAlt: 'Pagina Facebook del campeggio',
     instagramAlt: 'Profilo Instagram del campeggio',
-    rights: 'Camping Lido Valderice | Part. IVA 01467360812 | Tutti i diritti riservati.',
+    rights: 'Tutti i diritti riservati.',
+    vat: 'Part. IVA 01467360812',
   },
   common: {
     infoBooking: 'Per info e prenotazioni',
@@ -332,7 +333,8 @@ const en: Ui = {
     social: 'Follow us on social media',
     facebookAlt: 'The campsite’s Facebook page',
     instagramAlt: 'The campsite’s Instagram profile',
-    rights: 'Camping Lido Valderice | VAT 01467360812 | All rights reserved.',
+    rights: 'All rights reserved.',
+    vat: 'VAT 01467360812',
   },
   common: {
     infoBooking: 'For information and bookings',
@@ -595,7 +597,8 @@ const de: Ui = {
     social: 'Folgen Sie uns in den sozialen Medien',
     facebookAlt: 'Facebook-Seite des Campingplatzes',
     instagramAlt: 'Instagram-Profil des Campingplatzes',
-    rights: 'Camping Lido Valderice | MwSt.-Nr. 01467360812 | Alle Rechte vorbehalten.',
+    rights: 'Alle Rechte vorbehalten.',
+    vat: 'MwSt.-Nr. 01467360812',
   },
   common: {
     infoBooking: 'Für Infos und Reservierungen',
@@ -859,7 +862,8 @@ const fr: Ui = {
     social: 'Suivez-nous sur les réseaux sociaux',
     facebookAlt: 'Page Facebook du camping',
     instagramAlt: 'Profil Instagram du camping',
-    rights: 'Camping Lido Valderice | TVA 01467360812 | Tous droits réservés.',
+    rights: 'Tous droits réservés.',
+    vat: 'TVA 01467360812',
   },
   common: {
     infoBooking: 'Pour infos et réservations',
