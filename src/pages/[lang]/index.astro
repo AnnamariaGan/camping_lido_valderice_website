@@ -69,34 +69,13 @@ const serviceCards = [
   <section class="section alt">
     <div class="wrap">
       <div class="section-head">
-        <h2>{u.home.stayTitle}</h2>
+        <h2>{u.home.cardsTitle}</h2>
       </div>
       <div class="cards">
         {
-          stayCards.map(({ href, img, label, alt }) => (
+          [...stayCards, ...serviceCards].map(({ href, img, label, alt }) => (
             <a class="card" href={localizedPath(lang, href as RouteKey)}>
-              <Picture src={img} formats={["webp"]} fallbackFormat="webp" widths={[400, 800]} sizes="(max-width: 40rem) 92vw, 33rem" quality={62} alt={alt} loading="lazy" decoding="async" />
-              <div class="card-body">
-                <h3>{label}</h3>
-                <span class="btn accent">{u.common.explore}</span>
-              </div>
-            </a>
-          ))
-        }
-      </div>
-    </div>
-  </section>
-
-  <section class="section" style="padding-top:0;">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>{u.home.servicesTitle}</h2>
-      </div>
-      <div class="cards">
-        {
-          serviceCards.map(({ href, img, label, alt }) => (
-            <a class="card" href={localizedPath(lang, href as RouteKey)}>
-              <Picture src={img} formats={["webp"]} fallbackFormat="webp" widths={[400, 800]} sizes="(max-width: 40rem) 92vw, 33rem" quality={62} alt={alt} loading="lazy" decoding="async" />
+              <Picture src={img} formats={["webp"]} fallbackFormat="webp" widths={[400, 800]} sizes="(max-width: 40rem) 92vw, 22rem" quality={62} alt={alt} loading="lazy" decoding="async" />
               <div class="card-body">
                 <h3>{label}</h3>
                 <span class="btn accent">{u.common.explore}</span>

@@ -91,8 +91,7 @@ const it = {
     newsAlt: 'Illustrazione di una zanzara',
     newsText:
       'Più comfort, meno zanzare. Il nostro campeggio è ora protetto da un avanzato sistema di nebulizzazione ecologica contro le zanzare, per farti godere le tue vacanze in totale relax. Un ambiente più sereno, per vacanze senza punture!',
-    stayTitle: 'Soluzioni di pernottamento',
-    servicesTitle: 'I nostri servizi',
+    cardsTitle: 'Soluzioni e servizi',
     cards: {
       piazzole: { label: 'Piazzole camper e tende', alt: 'Piazzole ombreggiate per camper e tende' },
       casette: { label: 'Casette', alt: 'Casa mobile con veranda' },
@@ -363,8 +362,7 @@ const en: Ui = {
     newsAlt: 'Illustration of a mosquito',
     newsText:
       'More comfort, fewer mosquitoes. Our campsite is now protected by an advanced eco-friendly mosquito misting system, so you can enjoy your holiday in complete relaxation. A more peaceful environment, for itch-free holidays!',
-    stayTitle: 'Where to stay',
-    servicesTitle: 'Our services',
+    cardsTitle: 'Stays and services',
     cards: {
       piazzole: { label: 'Camper and tent pitches', alt: 'Shaded pitches for campers and tents' },
       casette: { label: 'Cabins', alt: 'Mobile home with veranda' },
@@ -634,8 +632,7 @@ const de: Ui = {
     newsAlt: 'Abbildung einer Mücke',
     newsText:
       'Mehr Komfort, weniger Mücken. Unser Campingplatz ist jetzt mit einem modernen, umweltfreundlichen Mücken-Nebelssystem geschützt, damit Sie Ihren Urlaub in voller Ruhe genießen können. Eine entspanntere Umgebung – für einen Urlaub ohne Stiche!',
-    stayTitle: 'Übernachtungsmöglichkeiten',
-    servicesTitle: 'Unsere Leistungen',
+    cardsTitle: 'Aufenthalte und Leistungen',
     cards: {
       piazzole: { label: 'Wohnmobil- und Zeltplätze', alt: 'Schattige Stellplätze für Wohnmobile und Zelte' },
       casette: { label: 'Hütten', alt: 'Mobilheim mit Veranda' },
@@ -905,8 +902,7 @@ const fr: Ui = {
     newsAlt: 'Illustration d’un moustique',
     newsText:
       'Plus de confort, moins de moustiques. Notre camping est désormais protégé par un système de nébulisation écologique avancé contre les moustiques, pour que vous profitiez de vos vacances en toute sérénité. Un environnement plus paisible, pour des vacances sans piqûres !',
-    stayTitle: 'Hébergements',
-    servicesTitle: 'Nos services',
+    cardsTitle: 'Séjours et services',
     cards: {
       piazzole: { label: 'Emplacements camping-cars et tentes', alt: 'Emplacements ombragés pour camping-cars et tentes' },
       casette: { label: 'Bungalows', alt: 'Mobile-home avec véranda' },
