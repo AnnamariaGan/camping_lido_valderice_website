@@ -78,7 +78,7 @@ const serviceCards = [
         {
           stayCards.map(({ href, img, label, alt }) => (
             <a class="card" href={localizedPath(lang, href as RouteKey)}>
-              <Picture src={img} formats={["webp"]} fallbackFormat="webp" widths={[400, 800]} sizes="(max-width: 40rem) 92vw, 33rem" quality={75} alt={alt} loading="lazy" decoding="async" />
+              <Picture src={img} formats={["webp"]} fallbackFormat="webp" widths={[400, 800]} sizes="(max-width: 40rem) 92vw, 33rem" quality={62} alt={alt} loading="lazy" decoding="async" />
               <div class="card-body">
                 <h3>{label}</h3>
                 <span class="btn accent">{u.common.explore}</span>
@@ -99,7 +99,7 @@ const serviceCards = [
         {
           serviceCards.map(({ href, img, label, alt }) => (
             <a class="card" href={localizedPath(lang, href as RouteKey)}>
-              <Picture src={img} formats={["webp"]} fallbackFormat="webp" widths={[400, 800]} sizes="(max-width: 40rem) 92vw, 33rem" quality={75} alt={alt} loading="lazy" decoding="async" />
+              <Picture src={img} formats={["webp"]} fallbackFormat="webp" widths={[400, 800]} sizes="(max-width: 40rem) 92vw, 33rem" quality={62} alt={alt} loading="lazy" decoding="async" />
               <div class="card-body">
                 <h3>{label}</h3>
                 <span class="btn accent">{u.common.explore}</span>

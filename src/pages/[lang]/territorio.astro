@@ -49,7 +49,7 @@ const places = [
       {
         places.map(({ img, name, text }, i) => (
           <article class:list={{ place: true, flip: i % 2 === 1 }}>
-            <Image src={img} alt={name} widths={[480, 960]} sizes="(min-width: 50rem) 50vw, 100vw" quality={75} loading="lazy" decoding="async" />
+            <Image src={img} alt={name} widths={[480, 960]} sizes="(min-width: 50rem) 50vw, 100vw" quality={62} loading="lazy" decoding="async" />
             <div class="place-text">
               <span class="place-num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
               <h2>{name}</h2>
