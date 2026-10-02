@@ -40,4 +40,6 @@ export default defineConfig({
   build: {
     inlineStylesheets: 'auto',
   },
+  // Cache delle trasformazioni immagini fuori da node_modules: sopravvive a npm ci.
+  cacheDir: './.astro',
 });
