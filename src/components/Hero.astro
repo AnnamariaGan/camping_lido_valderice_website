@@ -23,7 +23,7 @@ const { img, title, tagline, alt, chip, actions = [], compact = false } = Astro.
 /** Parametri condivisi tra Picture e preload: URL identici, niente doppie varianti. */
 const HERO_WIDTHS = [720, 960, 1280];
 const HERO_QUALITY = 68;
-const lcpPreload = await getImage({ src: img, format: 'avif', quality: HERO_QUALITY, widths: HERO_WIDTHS });
+const lcpPreload = await getImage({ src: img, format: 'webp', quality: HERO_QUALITY, widths: HERO_WIDTHS });
 ---
 
 <section class:list={['hero', { 'hero-compact': compact }]}>
@@ -37,7 +37,7 @@ const lcpPreload = await getImage({ src: img, format: 'avif', quality: HERO_QUAL
   />
   <Picture
     src={img}
-    formats={['avif', 'webp']}
+    formats={['webp']}
     fallbackFormat="webp"
     widths={HERO_WIDTHS}
     sizes="100vw"
