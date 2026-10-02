@@ -35,7 +35,7 @@ const items: { key: RouteKey; label: string }[] = [
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="brand" href={localizedPath(lang, 'home')}>
-      <Image class="logo" src={logo} alt="" width={48} height={48} loading="eager" />
+      <Image class="logo" src={logo} alt="" width={48} height={48} densities={[1, 2, 3]} loading="eager" />
       <span>{u.meta.siteName}</span>
     </a>
 
