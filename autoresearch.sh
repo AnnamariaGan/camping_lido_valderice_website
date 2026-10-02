@@ -82,6 +82,7 @@ for i in "${!PAGES[@]}"; do
     --output=json \
     --output-path="$OUT/page-$i.json" \
     --only-categories=performance,accessibility,best-practices,seo \
+    --blocked-url-patterns "https://cloud.umami.is/*" "https://gateway.umami.is/*" \
     --chrome-flags="${CHROME_FLAGS[*]} --user-data-dir=$TMP_CHROME_DIR" \
     >/dev/null
 done
