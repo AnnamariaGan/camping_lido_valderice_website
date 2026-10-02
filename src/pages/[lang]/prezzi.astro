@@ -37,41 +37,53 @@ const u = ui[lang];
           ))
         }
 
-        <section class="price-card featured">
+<section class="price-card featured price-full">
           <span class="badge">★</span>
           <h2>{u.prezzi.highSeason.title}</h2>
-          <table>
-            <thead>
-              <tr>
-                <th scope="col">{u.prezzi.highSeason.service}</th>
-                <th scope="col">{u.prezzi.highSeason.price}</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="group-row">
-                <th colspan="2" scope="colgroup">{u.prezzi.highSeason.stayGroup}</th>
-              </tr>
-              {
-                u.prezzi.highSeason.stay.map(([label, price]) => (
+          <div class="price-tables">
+            <div class="price-table">
+              <h3>{u.prezzi.highSeason.stayGroup}</h3>
+              <table>
+                <thead>
                   <tr>
-                    <th scope="row">{label}</th>
-                    <td>{price}</td>
+                    <th scope="col">{u.prezzi.highSeason.service}</th>
+                    <th scope="col">{u.prezzi.highSeason.price}</th>
                   </tr>
-                ))
-              }
-              <tr class="group-row">
-                <th colspan="2" scope="colgroup">{u.prezzi.highSeason.vehiclesGroup}</th>
-              </tr>
-              {
-                u.prezzi.highSeason.vehicles.map(([label, price]) => (
+                </thead>
+                <tbody>
+                  {
+                    u.prezzi.highSeason.stay.map(([label, price]) => (
+                      <tr>
+                        <th scope="row">{label}</th>
+                        <td>{price}</td>
+                      </tr>
+                    ))
+                  }
+                </tbody>
+              </table>
+            </div>
+            <div class="price-table">
+              <h3>{u.prezzi.highSeason.vehiclesGroup}</h3>
+              <table>
+                <thead>
                   <tr>
-                    <th scope="row">{label}</th>
-                    <td>{price}</td>
+                    <th scope="col">{u.prezzi.highSeason.service}</th>
+                    <th scope="col">{u.prezzi.highSeason.price}</th>
                   </tr>
-                ))
-              }
-            </tbody>
-          </table>
+                </thead>
+                <tbody>
+                  {
+                    u.prezzi.highSeason.vehicles.map(([label, price]) => (
+                      <tr>
+                        <th scope="row">{label}</th>
+                        <td>{price}</td>
+                      </tr>
+                    ))
+                  }
+                </tbody>
+              </table>
+            </div>
+          </div>
         </section>
       </div>
 

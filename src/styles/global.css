@@ -809,15 +809,24 @@ a:hover {
   text-align: right;
 }
 
-.price-card .group-row th {
+.price-card.price-full {
+  grid-column: 1 / -1;
+}
+
+.price-tables {
+  display: grid;
+  gap: 1.5rem 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(14rem, 100%), 1fr));
+  margin-top: 1.25rem;
+}
+
+.price-table h3 {
   font-size: 0.78rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--sea-600);
-  text-align: left;
-  padding: 1rem 0 0.3rem;
-  border-bottom: 1px solid var(--line);
+  margin: 0 0 0.55rem;
 }
 
 .price-card td {
