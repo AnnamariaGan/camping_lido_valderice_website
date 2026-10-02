@@ -38,7 +38,9 @@ export default defineConfig({
     '/pages/contatti.html': '/it/contatti/',
   },
   build: {
-    inlineStylesheets: 'auto',
+    // Il CSS (un solo chunk condiviso ~4kB) viene inlineato: elimina l'unica
+    // richiesta render-blocking (152ms stimati dall'insight di Chrome).
+    inlineStylesheets: 'always',
   },
   // Cache delle trasformazioni immagini fuori da node_modules: sopravvive a npm ci.
   cacheDir: './.astro',
