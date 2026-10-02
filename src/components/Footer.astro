@@ -1,0 +1,46 @@
+---
+import { type Locale } from '../i18n/config';
+import { ui } from '../i18n/ui';
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+const u = ui[lang];
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <h2>{u.meta.siteName}</h2>
+      <p>{year} | {u.footer.rights}</p>
+    </div>
+
+    <div>
+      <h2>{u.footer.address}</h2>
+      <p>{u.footer.street}</p>
+      <p>{u.footer.city}</p>
+      <p><a href={`mailto:${u.footer.mail}`}>{u.footer.mail}</a></p>
+    </div>
+
+    <div>
+      <h2>{u.footer.social}</h2>
+      <div class="social">
+        <a href="https://www.facebook.com/camping.lidovalderice" aria-label={u.footer.facebookAlt} rel="me noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.5 1.6-1.5H16V4.9c-.3 0-1.2-.1-2.2-.1-2.2 0-3.8 1.4-3.8 4v2.2H7.5v3h2.5v7h3.5z"></path>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/campinglidovalderice/" aria-label={u.footer.instagramAlt} rel="me noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <rect x="3.5" y="3.5" width="17" height="17" rx="4.5"></rect>
+            <circle cx="12" cy="12" r="3.8"></circle>
+            <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"></circle>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

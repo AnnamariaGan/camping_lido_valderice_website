@@ -1,0 +1,67 @@
+---
+import { Picture } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+export interface HeroAction {
+  href: string;
+  label: string;
+  variant?: 'accent' | 'ghost';
+}
+
+interface Props {
+  img: ImageMetadata;
+  title: string;
+  tagline?: string;
+  alt: string;
+  chip?: string;
+  actions?: HeroAction[];
+  compact?: boolean;
+}
+
+const { img, title, tagline, alt, chip, actions = [], compact = false } = Astro.props;
+---
+
+<section class:list={['hero', { 'hero-compact': compact }]}>
+  <Picture
+    src={img}
+    formats={['avif', 'webp']}
+    fallbackFormat="webp"
+    widths={[720, 960, 1280]}
+    sizes="100vw"
+    quality={68}
+    alt={alt}
+    loading="eager"
+    fetchpriority="high"
+  />
+  <div class="wrap hero-text">
+    {
+      chip && (
+        <span class="hero-chip">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"></path>
+          </svg>
+          {chip}
+        </span>
+      )
+    }
+    <h1>{title}</h1>
+    {tagline && <p class="tagline">{tagline}</p>}
+    {
+      actions.length > 0 && (
+        <p class="hero-actions">
+          {actions.map((action) => (
+            <a
+              class:list={['btn', action.variant === 'ghost' ? 'ghost' : 'accent']}
+              href={action.href}
+            >
+              {action.label}
+            </a>
+          ))}
+        </p>
+      )
+    }
+  </div>
+  <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,64 C240,96 480,16 720,32 C960,48 1200,80 1440,48 L1440,90 L0,90 Z"></path>
+  </svg>
+</section>

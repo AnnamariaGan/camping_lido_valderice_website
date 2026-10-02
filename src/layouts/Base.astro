@@ -1,0 +1,119 @@
+---
+import '../styles/global.css';
+import { getImage } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import {
+  localeHtmlLang,
+  localeOg,
+  locales,
+  localizedPath,
+  switchLang,
+  type Locale,
+  type RouteKey,
+} from '../i18n/config';
+import { ui } from '../i18n/ui';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import MobileCta from '../components/MobileCta.astro';
+import heroHome from '../assets/hero-home.webp';
+
+interface Props {
+  lang: Locale;
+  route: RouteKey;
+  title: string;
+  description: string;
+  ogImage?: ImageMetadata;
+}
+
+const { lang, route, title, description, ogImage = heroHome } = Astro.props;
+const u = ui[lang];
+
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const siteName = u.meta.siteName;
+const pageTitle = route === 'home' ? title : `${title} | ${siteName}`;
+const alternates = locales.map((l) => ({
+  locale: l,
+  href: new URL(switchLang(Astro.url.pathname, l), Astro.site),
+}));
+const otherAlternates = alternates.filter((a) => a.locale !== lang);
+const xDefault = new URL(switchLang(Astro.url.pathname, 'it'), Astro.site);
+
+const socialImage = await getImage({
+  src: ogImage,
+  width: 1200,
+  height: 630,
+  format: 'jpeg',
+  quality: 80,
+  fit: 'cover',
+});
+const socialUrl = new URL(socialImage.src, Astro.site);
+
+/** Dati strutturati: indirizzo e coordinate sono fatti, non contenuti localizzati. */
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Campground',
+  name: siteName,
+  url: new URL(localizedPath(lang, 'home'), Astro.site).href,
+  image: socialUrl.href,
+  email: 'campinglidovalderice@libero.it',
+  telephone: '+390923573477',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Via della Conchiglia 20',
+    postalCode: '91019',
+    addressLocality: 'Valderice',
+    addressRegion: 'Sicilia',
+    addressCountry: 'IT',
+  },
+  geo: { '@type': 'GeoCoordinates', latitude: 38.070166, longitude: 12.629165 },
+  sameAs: [
+    'https://www.facebook.com/camping.lidovalderice',
+    'https://www.instagram.com/campinglidovalderice/',
+  ],
+};
+---
+
+<!doctype html>
+<html lang={localeHtmlLang[lang]}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    {alternates.map((a) => <link rel="alternate" hreflang={localeHtmlLang[a.locale]} href={a.href} />)}
+    <link rel="alternate" hreflang="x-default" href={xDefault} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:locale" content={localeOg[lang]} />
+    {otherAlternates.map((a) => <meta property="og:locale:alternate" content={localeOg[a.locale]} />)}
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={socialUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={title} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialUrl} />
+
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+    <script is:inline defer src="https://cloud.umami.is/script.js" data-website-id="a2fdc7f6-897f-4f85-8e13-58014665f4dd"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{u.skipToContent}</a>
+    <Header lang={lang} route={route} />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer lang={lang} />
+    <MobileCta lang={lang} />
+  </body>
+</html>

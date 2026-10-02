@@ -1,0 +1,126 @@
+---
+import { locales } from '../../i18n/config';
+import Base from '../../layouts/Base.astro';
+import Hero from '../../components/Hero.astro';
+import { localizedPath, type RouteKey } from '../../i18n/config';
+import { ui } from '../../i18n/ui';
+import { Picture } from 'astro:assets';
+import heroHome from '../../assets/hero-home.webp';
+import zanzara from '../../assets/zanzara.webp';
+import cardPiazzole from '../../assets/card-piazzole.webp';
+import cardCasette from '../../assets/card-casette.webp';
+import cardMarket from '../../assets/card-market.webp';
+import cardEventi from '../../assets/card-eventi.webp';
+
+export function getStaticPaths() {
+  return locales.map((lang) => ({ params: { lang }, props: { lang } }));
+}
+
+const { lang } = Astro.props;
+const route: RouteKey = 'home';
+const u = ui[lang];
+
+const heroActions = [
+  { href: localizedPath(lang, 'contatti'), label: u.common.bookNow, variant: 'accent' as const },
+  { href: `tel:${u.contatti.contacts[0].tel}`, label: u.common.callNow, variant: 'ghost' as const },
+];
+
+const stayCards = [
+  { href: 'piazzole', img: cardPiazzole, label: u.home.cards.piazzole.label, alt: u.home.cards.piazzole.alt },
+  { href: 'casette', img: cardCasette, label: u.home.cards.casette.label, alt: u.home.cards.casette.alt },
+];
+const serviceCards = [
+  { href: 'ristorazione', img: cardMarket, label: u.home.cards.ristorazione.label, alt: u.home.cards.ristorazione.alt },
+  { href: 'eventi', img: cardEventi, label: u.home.cards.eventi.label, alt: u.home.cards.eventi.alt },
+];
+---
+
+<Base
+  lang={lang}
+  route={route}
+  title={u.meta.home.title}
+  description={u.meta.home.description}
+  ogImage={heroHome}
+>
+  <Hero
+    img={heroHome}
+    title={u.home.heroTitle}
+    tagline={u.home.heroTagline}
+    alt={u.meta.heroAlt.home}
+    chip={u.home.heroChip}
+    actions={heroActions}
+  />
+
+  <section class="section">
+    <div class="wrap">
+      <p class="lead">{u.home.intro}</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="wrap">
+      <div class="news-box">
+        <Picture class="icon" src={zanzara} alt={u.home.newsAlt} width={120} fallbackFormat="webp" loading="lazy" />
+        <div>
+          <h2>{u.home.newsTitle}</h2>
+          <p>{u.home.newsText}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>{u.home.stayTitle}</h2>
+      </div>
+      <div class="cards">
+        {
+          stayCards.map(({ href, img, label, alt }) => (
+            <a class="card" href={localizedPath(lang, href as RouteKey)}>
+              <Picture src={img} formats={["avif", "webp"]} fallbackFormat="webp" widths={[400, 800]} sizes="(max-width: 40rem) 92vw, 33rem" quality={75} alt={alt} loading="lazy" decoding="async" />
+              <div class="card-body">
+                <h3>{label}</h3>
+                <span class="btn accent">{u.common.explore}</span>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>{u.home.servicesTitle}</h2>
+      </div>
+      <div class="cards">
+        {
+          serviceCards.map(({ href, img, label, alt }) => (
+            <a class="card" href={localizedPath(lang, href as RouteKey)}>
+              <Picture src={img} formats={["avif", "webp"]} fallbackFormat="webp" widths={[400, 800]} sizes="(max-width: 40rem) 92vw, 33rem" quality={75} alt={alt} loading="lazy" decoding="async" />
+              <div class="card-body">
+                <h3>{label}</h3>
+                <span class="btn accent">{u.common.explore}</span>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="wrap">
+      <div class="territory-box">
+        <span class="kicker">{u.home.territoryKicker}</span>
+        <h2>{u.home.territoryTitle}</h2>
+        {u.home.territoryText.map((p) => <p>{p}</p>)}
+        <p class="mt-2">
+          <a class="btn" href={localizedPath(lang, 'territorio')}>{u.common.explore}</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>

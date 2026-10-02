@@ -1,0 +1,63 @@
+---
+import { locales } from '../../i18n/config';
+import Base from '../../layouts/Base.astro';
+import Hero from '../../components/Hero.astro';
+import type { RouteKey } from '../../i18n/config';
+import { ui } from '../../i18n/ui';
+import { Image } from 'astro:assets';
+import heroTerritorio from '../../assets/hero-territorio.webp';
+import erice from '../../assets/erice.webp';
+import macari from '../../assets/macari.webp';
+import saline from '../../assets/saline.webp';
+import cofano from '../../assets/cofano.webp';
+import mozia from '../../assets/mozia.webp';
+import segesta from '../../assets/segesta.webp';
+import scopello from '../../assets/scopello.webp';
+import egadi from '../../assets/egadi.webp';
+
+export function getStaticPaths() {
+  return locales.map((lang) => ({ params: { lang }, props: { lang } }));
+}
+
+const { lang } = Astro.props;
+const route: RouteKey = 'territorio';
+const u = ui[lang];
+
+const places = [
+  { img: erice, name: u.territorio.places[0].name, text: u.territorio.places[0].text },
+  { img: macari, name: u.territorio.places[1].name, text: u.territorio.places[1].text },
+  { img: saline, name: u.territorio.places[2].name, text: u.territorio.places[2].text },
+  { img: cofano, name: u.territorio.places[3].name, text: u.territorio.places[3].text },
+  { img: mozia, name: u.territorio.places[4].name, text: u.territorio.places[4].text },
+  { img: segesta, name: u.territorio.places[5].name, text: u.territorio.places[5].text },
+  { img: scopello, name: u.territorio.places[6].name, text: u.territorio.places[6].text },
+  { img: egadi, name: u.territorio.places[7].name, text: u.territorio.places[7].text },
+];
+---
+
+<Base
+  lang={lang}
+  route={route}
+  title={u.meta.pages.territorio}
+  description={u.meta.descriptions.territorio}
+  ogImage={heroTerritorio}
+>
+  <Hero img={heroTerritorio} title={u.meta.pages.territorio} alt={u.meta.heroAlt.territorio} />
+
+  <section class="section">
+    <div class="wrap">
+      {
+        places.map(({ img, name, text }, i) => (
+          <article class:list={{ place: true, flip: i % 2 === 1 }}>
+            <Image src={img} alt={name} widths={[480, 960]} sizes="(min-width: 50rem) 50vw, 100vw" quality={75} loading="lazy" decoding="async" />
+            <div class="place-text">
+              <span class="place-num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+              <h2>{name}</h2>
+              <p>{text}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+</Base>

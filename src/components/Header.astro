@@ -1,0 +1,95 @@
+---
+import {
+  localizedPath,
+  locales,
+  localeFullNames,
+  localeNames,
+  switchLang,
+  type Locale,
+  type RouteKey,
+} from '../i18n/config';
+import { ui } from '../i18n/ui';
+import logo from '../assets/logo.webp';
+import { Image } from 'astro:assets';
+
+interface Props {
+  lang: Locale;
+  route: RouteKey;
+}
+
+const { lang, route } = Astro.props;
+const u = ui[lang];
+
+const items: { key: RouteKey; label: string }[] = [
+  { key: 'home', label: u.nav.home },
+  { key: 'piazzole', label: u.nav.piazzole },
+  { key: 'casette', label: u.nav.casette },
+  { key: 'ristorazione', label: u.nav.ristorazione },
+  { key: 'eventi', label: u.nav.eventi },
+  { key: 'territorio', label: u.nav.territorio },
+  { key: 'prezzi', label: u.nav.prezzi },
+  { key: 'contatti', label: u.nav.contatti },
+];
+---
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href={localizedPath(lang, 'home')}>
+      <Image class="logo" src={logo} alt="" width={48} height={48} loading="eager" />
+      <span>{u.meta.siteName}</span>
+    </a>
+
+    <nav class="site-nav" aria-label={u.nav.label}>
+      <ul>
+        {items.map(({ key, label }) => (
+          <li>
+            <a href={localizedPath(lang, key)} aria-current={route === key ? 'page' : undefined}>{label}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <nav class="lang-nav desk" aria-label={u.langSwitcher}>
+      {locales.map((l) => (
+        <a
+          href={switchLang(Astro.url.pathname, l)}
+          hreflang={l}
+          lang={l}
+          aria-label={localeFullNames[l]}
+          aria-current={l === lang ? 'true' : undefined}
+        >
+          {localeNames[l]}
+        </a>
+      ))}
+    </nav>
+
+    <details class="menu-mobile">
+      <summary>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <line x1="4" y1="7" x2="20" y2="7"></line>
+          <line x1="4" y1="12" x2="20" y2="12"></line>
+          <line x1="4" y1="17" x2="20" y2="17"></line>
+        </svg>
+        <span class="visually-hidden">{u.nav.openMenu}</span>
+      </summary>
+      <nav aria-label={u.nav.label}>
+        {items.map(({ key, label }) => (
+          <a href={localizedPath(lang, key)} aria-current={route === key ? 'page' : undefined}>{label}</a>
+        ))}
+        <div class="lang-nav" role="group" aria-label={u.langSwitcher}>
+          {locales.map((l) => (
+            <a
+              href={switchLang(Astro.url.pathname, l)}
+              hreflang={l}
+              lang={l}
+              aria-label={localeFullNames[l]}
+              aria-current={l === lang ? 'true' : undefined}
+            >
+              {localeNames[l]}
+            </a>
+          ))}
+        </div>
+      </nav>
+    </details>
+  </div>
+</header>

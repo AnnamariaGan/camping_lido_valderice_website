@@ -1,0 +1,65 @@
+---
+import { localizedPath, locales, localeNames } from '../i18n/config';
+import { ui } from '../i18n/ui';
+import { Image } from 'astro:assets';
+import egadi from '../assets/egadi.webp';
+
+const lang = 'it' as const;
+const u = ui[lang];
+---
+
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{u.notFound.title} | {u.meta.siteName}</title>
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <style is:inline>
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        background: #f0f8ff;
+        color: #122b3a;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        padding: 2rem;
+        box-sizing: border-box;
+      }
+      h1 { color: #0e5aa8; }
+      .btn {
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 0.7rem 1.4rem;
+        border-radius: 999px;
+        background: #1272d4;
+        color: #fff;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .langs { margin-top: 1.25rem; font-size: 0.9rem; }
+      .langs a { margin: 0 0.35rem; color: #0e5aa8; }
+      img { width: min(30rem, 90%); border-radius: 1rem; margin-top: 2rem; }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>{u.notFound.title}</h1>
+      <p>{u.notFound.text}</p>
+      <a class="btn" href={localizedPath('it', 'home')}>{u.notFound.cta}</a>
+      <p class="langs">
+        {
+          locales.map((l) => (
+            <a href={localizedPath(l, 'home')} hreflang={l} lang={l}>
+              {localeNames[l]}
+            </a>
+          ))
+        }
+      </p>
+      <Image src={egadi} alt={u.notFound.alt} width={480} loading="lazy" />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+---
+import { locales } from '../../i18n/config';
+import Base from '../../layouts/Base.astro';
+import Hero from '../../components/Hero.astro';
+import Gallery from '../../components/Gallery.astro';
+import { localizedPath, type RouteKey } from '../../i18n/config';
+import { ui } from '../../i18n/ui';
+import heroCasette from '../../assets/casa-01.webp';
+import c01 from '../../assets/casa-01.webp';
+import c02 from '../../assets/casa-02.webp';
+import c03 from '../../assets/casa-03.webp';
+import c04 from '../../assets/casa-04.webp';
+import c05 from '../../assets/casa-05.webp';
+import c06 from '../../assets/casa-06.webp';
+import c07 from '../../assets/casa-07.webp';
+import c08 from '../../assets/casa-08.webp';
+import c09 from '../../assets/casa-09.webp';
+import c10 from '../../assets/casa-10.webp';
+
+export function getStaticPaths() {
+  return locales.map((lang) => ({ params: { lang }, props: { lang } }));
+}
+
+const { lang } = Astro.props;
+const route: RouteKey = 'casette';
+const u = ui[lang];
+
+const gallery = [
+  { src: c01, alt: u.casette.galleryAlt[0] },
+  { src: c02, alt: u.casette.galleryAlt[1], wide: true },
+  { src: c03, alt: u.casette.galleryAlt[2] },
+  { src: c04, alt: u.casette.galleryAlt[3] },
+  { src: c05, alt: u.casette.galleryAlt[4] },
+  { src: c06, alt: u.casette.galleryAlt[5] },
+  { src: c07, alt: u.casette.galleryAlt[6], wide: true },
+  { src: c08, alt: u.casette.galleryAlt[7], wide: true },
+  { src: c09, alt: u.casette.galleryAlt[8] },
+  { src: c10, alt: u.casette.galleryAlt[9] },
+];
+---
+
+<Base
+  lang={lang}
+  route={route}
+  title={u.meta.pages.casette}
+  description={u.meta.descriptions.casette}
+  ogImage={heroCasette}
+>
+  <Hero img={heroCasette} title={u.meta.pages.casette} alt={u.meta.heroAlt.casette} />
+
+  <section class="section">
+    <div class="wrap">
+      {u.casette.text.map((p) => <p>{p}</p>)}
+      <p class="mt-2">
+        <strong>{u.common.infoBooking} <a href={localizedPath(lang, 'contatti')}>{u.common.contactUs}</a></strong>
+      </p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="wrap">
+      <Gallery images={gallery} moreLabel={u.common.morePhotos} />
+    </div>
+  </section>
+</Base>

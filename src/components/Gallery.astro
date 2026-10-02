@@ -1,0 +1,74 @@
+---
+import { Picture } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+export interface GalleryImage {
+  src: ImageMetadata;
+  alt: string;
+  wide?: boolean;
+}
+
+interface Props {
+  images: GalleryImage[];
+  moreLabel: string;
+}
+
+const { images, moreLabel } = Astro.props;
+const initialImages = images.slice(0, 6);
+const additionalImages = images.slice(6);
+
+/** Larghezze reali delle celle della griglia: 2 colonne fino a 51rem,
+ *  3 fino a 65rem, 4 oltre (wrap massimo 68rem). */
+const sizes = {
+  normal: '(max-width: 51rem) 46vw, (max-width: 65rem) 33vw, 17rem',
+  wide: '(max-width: 51rem) 95vw, (max-width: 65rem) 67vw, 34rem',
+};
+---
+
+<div class="gallery">
+  {
+    initialImages.map(({ src, alt, wide }) => (
+      <figure class:list={{ g1x2: wide }}>
+        <Picture
+          src={src}
+          formats={['avif', 'webp']}
+          fallbackFormat="webp"
+          widths={[320, 480, 640, 960]}
+          sizes={wide ? sizes.wide : sizes.normal}
+          quality={62}
+          alt={alt}
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption aria-hidden="true">{alt}</figcaption>
+      </figure>
+    ))
+  }
+</div>
+{
+  additionalImages.length > 0 && (
+    <details class="gallery-more">
+      <summary>{moreLabel}</summary>
+      <div class="gallery">
+        {
+          additionalImages.map(({ src, alt, wide }) => (
+            <figure class:list={{ g1x2: wide }}>
+              <Picture
+                src={src}
+                formats={['avif', 'webp']}
+                fallbackFormat="webp"
+                widths={[320, 480, 640, 960]}
+                sizes={wide ? sizes.wide : sizes.normal}
+                quality={62}
+                alt={alt}
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption aria-hidden="true">{alt}</figcaption>
+            </figure>
+          ))
+        }
+      </div>
+    </details>
+  )
+}

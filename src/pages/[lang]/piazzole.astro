@@ -1,0 +1,92 @@
+---
+import { locales } from '../../i18n/config';
+import Base from '../../layouts/Base.astro';
+import Hero from '../../components/Hero.astro';
+import Gallery from '../../components/Gallery.astro';
+import type { RouteKey } from '../../i18n/config';
+import { ui } from '../../i18n/ui';
+import { Picture } from 'astro:assets';
+import heroPiazzole from '../../assets/hero-piazzole.webp';
+import zanzara from '../../assets/zanzara.webp';
+import p01 from '../../assets/piazzole-01.webp';
+import p02 from '../../assets/piazzole-02.webp';
+import p03 from '../../assets/piazzole-03.webp';
+import p04 from '../../assets/piazzole-04.webp';
+import p05 from '../../assets/piazzole-05.webp';
+import p06 from '../../assets/piazzole-06.webp';
+import p07 from '../../assets/piazzole-07.webp';
+import p08 from '../../assets/piazzole-08.webp';
+import p09 from '../../assets/piazzole-09.webp';
+import p10 from '../../assets/piazzole-10.webp';
+import p11 from '../../assets/piazzole-11.webp';
+import p12 from '../../assets/piazzole-12.webp';
+import p13 from '../../assets/piazzole-13.webp';
+import p14 from '../../assets/piazzole-14.webp';
+
+export function getStaticPaths() {
+  return locales.map((lang) => ({ params: { lang }, props: { lang } }));
+}
+
+const { lang } = Astro.props;
+const route: RouteKey = 'piazzole';
+const u = ui[lang];
+
+const gallery = [
+  { src: p01, alt: u.piazzole.galleryAlt[0] },
+  { src: p02, alt: u.piazzole.galleryAlt[1], wide: true },
+  { src: p03, alt: u.piazzole.galleryAlt[2] },
+  { src: p04, alt: u.piazzole.galleryAlt[3] },
+  { src: p05, alt: u.piazzole.galleryAlt[4] },
+  { src: p06, alt: u.piazzole.galleryAlt[5] },
+  { src: p07, alt: u.piazzole.galleryAlt[6], wide: true },
+  { src: p08, alt: u.piazzole.galleryAlt[7], wide: true },
+  { src: p09, alt: u.piazzole.galleryAlt[8] },
+  { src: p10, alt: u.piazzole.galleryAlt[9] },
+  { src: p11, alt: u.piazzole.tendeGalleryAlt[0] },
+  { src: p12, alt: u.piazzole.tendeGalleryAlt[1] },
+  { src: p13, alt: u.piazzole.tendeGalleryAlt[2] },
+  { src: p14, alt: u.piazzole.tendeGalleryAlt[3] },
+];
+---
+
+<Base
+  lang={lang}
+  route={route}
+  title={u.meta.pages.piazzole}
+  description={u.meta.descriptions.piazzole}
+  ogImage={heroPiazzole}
+>
+  <Hero img={heroPiazzole} title={u.meta.pages.piazzole} alt={u.meta.heroAlt.piazzole} />
+
+  <section class="section">
+    <div class="wrap">
+      <h2>{u.piazzole.intro.camperTitle}</h2>
+      <p>{u.piazzole.intro.camperText}</p>
+      <h2>{u.piazzole.intro.tendaTitle}</h2>
+      <p>{u.piazzole.intro.tendaText}</p>
+      <p><strong>{u.piazzole.intro.closing}</strong></p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="wrap">
+      <Gallery images={gallery} moreLabel={u.common.morePhotos} />
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="wrap">
+      <div class="news-box">
+        <Picture class="icon" src={zanzara} alt={u.home.newsAlt} width={120} fallbackFormat="webp" loading="lazy" />
+        <div>
+          <h2>{u.piazzole.newsTitle}</h2>
+          <p>{u.piazzole.newsText}</p>
+          <ul>
+            {u.piazzole.newsList.map((item) => <li>{item}</li>)}
+          </ul>
+          <p>{u.piazzole.newsOutro}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

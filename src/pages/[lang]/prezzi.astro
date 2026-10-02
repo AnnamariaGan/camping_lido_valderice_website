@@ -1,0 +1,64 @@
+---
+import { locales } from '../../i18n/config';
+import Base from '../../layouts/Base.astro';
+import Hero from '../../components/Hero.astro';
+import { localizedPath, type RouteKey } from '../../i18n/config';
+import { ui } from '../../i18n/ui';
+import heroPrezzi from '../../assets/hero-prezzi.webp';
+
+export function getStaticPaths() {
+  return locales.map((lang) => ({ params: { lang }, props: { lang } }));
+}
+
+const { lang } = Astro.props;
+const route: RouteKey = 'prezzi';
+const u = ui[lang];
+---
+
+<Base
+  lang={lang}
+  route={route}
+  title={u.meta.pages.prezzi}
+  description={u.meta.descriptions.prezzi}
+  ogImage={heroPrezzi}
+>
+  <Hero img={heroPrezzi} title={u.meta.pages.prezzi} alt={u.meta.heroAlt.prezzi} compact />
+
+  <section class="section">
+    <div class="wrap">
+      <div class="price-grid">
+        {
+          u.prezzi.cards.map((c) => (
+            <section class="price-card">
+              <h2>{c.title}</h2>
+              <p class="price-note">{c.subtitle}</p>
+              <p class="price">{c.price}</p>
+            </section>
+          ))
+        }
+
+        <section class="price-card featured">
+          <span class="badge">★</span>
+          <h2>{u.prezzi.highSeason.title}</h2>
+          <table>
+            <tbody>
+              {
+                u.prezzi.highSeason.rows.map(([label, price]) => (
+                  <tr>
+                    <td>{label}</td>
+                    <td>{price}</td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </section>
+      </div>
+
+      <p class="price-note mt-2">{u.prezzi.note}</p>
+      <p class="mt-2">
+        <strong>{u.common.infoBooking} <a href={localizedPath(lang, 'contatti')}>{u.common.contactUs}</a></strong>
+      </p>
+    </div>
+  </section>
+</Base>

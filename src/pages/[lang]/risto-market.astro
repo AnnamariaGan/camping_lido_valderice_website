@@ -1,0 +1,56 @@
+---
+import { locales } from '../../i18n/config';
+import Base from '../../layouts/Base.astro';
+import Hero from '../../components/Hero.astro';
+import Gallery from '../../components/Gallery.astro';
+import type { RouteKey } from '../../i18n/config';
+import { ui } from '../../i18n/ui';
+import heroRisto from '../../assets/hero-risto.webp';
+import r01 from '../../assets/risto-01.webp';
+import r02 from '../../assets/risto-02.webp';
+import r03 from '../../assets/risto-03.webp';
+import r04 from '../../assets/risto-04.webp';
+import r05 from '../../assets/risto-05.webp';
+import r06 from '../../assets/risto-06.webp';
+import r07 from '../../assets/risto-07.webp';
+
+export function getStaticPaths() {
+  return locales.map((lang) => ({ params: { lang }, props: { lang } }));
+}
+
+const { lang } = Astro.props;
+const route: RouteKey = 'ristorazione';
+const u = ui[lang];
+
+const gallery = [
+  { src: r01, alt: u.ristorazione.galleryAlt[1] },
+  { src: r02, alt: u.ristorazione.galleryAlt[2], wide: true },
+  { src: r03, alt: u.ristorazione.galleryAlt[3] },
+  { src: r04, alt: u.ristorazione.galleryAlt[4] },
+  { src: r05, alt: u.ristorazione.galleryAlt[5], wide: true },
+  { src: r06, alt: u.ristorazione.galleryAlt[6] },
+  { src: r07, alt: u.ristorazione.galleryAlt[7] },
+];
+---
+
+<Base
+  lang={lang}
+  route={route}
+  title={u.meta.pages.ristorazione}
+  description={u.meta.descriptions.ristorazione}
+  ogImage={heroRisto}
+>
+  <Hero img={heroRisto} title={u.meta.pages.ristorazione} alt={u.meta.heroAlt.ristorazione} />
+
+  <section class="section">
+    <div class="wrap">
+      {u.ristorazione.text.map((p) => <p>{p}</p>)}
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="wrap">
+      <Gallery images={gallery} moreLabel={u.common.morePhotos} />
+    </div>
+  </section>
+</Base>

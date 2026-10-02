@@ -1,0 +1,63 @@
+---
+import { locales } from '../../i18n/config';
+import Base from '../../layouts/Base.astro';
+import Hero from '../../components/Hero.astro';
+import Gallery from '../../components/Gallery.astro';
+import type { RouteKey } from '../../i18n/config';
+import { ui } from '../../i18n/ui';
+import heroEventi from '../../assets/hero-eventi.webp';
+import t01 from '../../assets/traiano-01.webp';
+import t02 from '../../assets/traiano-02.webp';
+import t03 from '../../assets/traiano-03.webp';
+import t04 from '../../assets/traiano-04.webp';
+import t05 from '../../assets/traiano-05.webp';
+import t06 from '../../assets/traiano-06.webp';
+import t07 from '../../assets/traiano-07.webp';
+import t08 from '../../assets/traiano-08.webp';
+import t09 from '../../assets/traiano-09.webp';
+import t10 from '../../assets/traiano-10.webp';
+
+export function getStaticPaths() {
+  return locales.map((lang) => ({ params: { lang }, props: { lang } }));
+}
+
+const { lang } = Astro.props;
+const route: RouteKey = 'eventi';
+const u = ui[lang];
+
+const gallery = [
+  { src: t01, alt: u.eventi.galleryAlt[0] },
+  { src: t02, alt: u.eventi.galleryAlt[1], wide: true },
+  { src: t03, alt: u.eventi.galleryAlt[2] },
+  { src: t04, alt: u.eventi.galleryAlt[3] },
+  { src: t05, alt: u.eventi.galleryAlt[4] },
+  { src: t06, alt: u.eventi.galleryAlt[5] },
+  { src: t07, alt: u.eventi.galleryAlt[6], wide: true },
+  { src: t08, alt: u.eventi.galleryAlt[7], wide: true },
+  { src: t09, alt: u.eventi.galleryAlt[8] },
+  { src: t10, alt: u.eventi.galleryAlt[9] },
+];
+---
+
+<Base
+  lang={lang}
+  route={route}
+  title={u.meta.pages.eventi}
+  description={u.meta.descriptions.eventi}
+  ogImage={heroEventi}
+>
+  <Hero img={heroEventi} title={u.meta.pages.eventi} alt={u.meta.heroAlt.eventi} />
+
+  <section class="section">
+    <div class="wrap">
+      <h2>{u.eventi.heading}</h2>
+      <p>{u.eventi.text}</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="wrap">
+      <Gallery images={gallery} moreLabel={u.common.morePhotos} />
+    </div>
+  </section>
+</Base>
