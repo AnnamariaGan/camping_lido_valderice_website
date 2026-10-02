@@ -21,8 +21,7 @@ const route: RouteKey = 'home';
 const u = ui[lang];
 
 const heroActions = [
-  { href: localizedPath(lang, 'contatti'), label: u.common.bookNow, variant: 'accent' as const },
-  { href: `tel:${u.contatti.contacts[0].tel}`, label: u.common.callNow, variant: 'ghost' as const },
+  { href: `tel:${u.contatti.phoneSeason.tel}`, label: u.common.callNow, variant: 'ghost' as const },
 ];
 
 const stayCards = [
