@@ -237,13 +237,19 @@ const it = {
     ],
     highSeason: {
       title: 'Alta stagione: agosto*',
-      rows: [
+      service: 'Servizio',
+      price: 'Prezzo',
+      stayGroup: 'Soggiorno',
+      vehiclesGroup: 'Veicoli',
+      stay: [
         ['Persona', '€7,90'],
         ['Piazzola', '€13,90'],
         ['Tenda', '€7,90'],
+        ['AirCamping', '€11,90'],
+      ],
+      vehicles: [
         ['Auto', '€4,00'],
         ['Moto', '€3,00'],
-        ['AirCamping', '€11,90'],
       ],
     },
     note: '* i bambini sotto i 3 anni non pagano',
@@ -503,13 +509,19 @@ const en: Ui = {
     ],
     highSeason: {
       title: 'High season: August*',
-      rows: [
+      service: 'Service',
+      price: 'Price',
+      stayGroup: 'Accommodation',
+      vehiclesGroup: 'Vehicles',
+      stay: [
         ['Person', '€7.90'],
         ['Pitch', '€13.90'],
         ['Tent', '€7.90'],
+        ['AirCamping', '€11.90'],
+      ],
+      vehicles: [
         ['Car', '€4.00'],
         ['Motorbike', '€3.00'],
-        ['AirCamping', '€11.90'],
       ],
     },
     note: '* children under 3 stay for free',
@@ -768,13 +780,19 @@ const de: Ui = {
     ],
     highSeason: {
       title: 'Hochsaison: August*',
-      rows: [
+      service: 'Leistung',
+      price: 'Preis',
+      stayGroup: 'Aufenthalt',
+      vehiclesGroup: 'Fahrzeuge',
+      stay: [
         ['Person', '7,90 €'],
         ['Stellplatz', '13,90 €'],
         ['Zelt', '7,90 €'],
+        ['AirCamping', '11,90 €'],
+      ],
+      vehicles: [
         ['Auto', '4,00 €'],
         ['Motorrad', '3,00 €'],
-        ['AirCamping', '11,90 €'],
       ],
     },
     note: '* Kinder unter 3 Jahren zahlen nichts',
@@ -1033,13 +1051,19 @@ const fr: Ui = {
     ],
     highSeason: {
       title: 'Haute saison : août*',
-      rows: [
+      service: 'Prestation',
+      price: 'Tarif',
+      stayGroup: 'Séjour',
+      vehiclesGroup: 'Véhicules',
+      stay: [
         ['Personne', '7,90 €'],
         ['Emplacement', '13,90 €'],
         ['Tente', '7,90 €'],
+        ['AirCamping', '11,90 €'],
+      ],
+      vehicles: [
         ['Voiture', '4,00 €'],
         ['Moto', '3,00 €'],
-        ['AirCamping', '11,90 €'],
       ],
     },
     note: '* les enfants de moins de 3 ans ne paient pas',

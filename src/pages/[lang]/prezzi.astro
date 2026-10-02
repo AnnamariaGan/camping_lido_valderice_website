@@ -41,11 +41,31 @@ const u = ui[lang];
           <span class="badge">★</span>
           <h2>{u.prezzi.highSeason.title}</h2>
           <table>
+            <thead>
+              <tr>
+                <th scope="col">{u.prezzi.highSeason.service}</th>
+                <th scope="col">{u.prezzi.highSeason.price}</th>
+              </tr>
+            </thead>
             <tbody>
+              <tr class="group-row">
+                <th colspan="2" scope="colgroup">{u.prezzi.highSeason.stayGroup}</th>
+              </tr>
               {
-                u.prezzi.highSeason.rows.map(([label, price]) => (
+                u.prezzi.highSeason.stay.map(([label, price]) => (
                   <tr>
-                    <td>{label}</td>
+                    <th scope="row">{label}</th>
+                    <td>{price}</td>
+                  </tr>
+                ))
+              }
+              <tr class="group-row">
+                <th colspan="2" scope="colgroup">{u.prezzi.highSeason.vehiclesGroup}</th>
+              </tr>
+              {
+                u.prezzi.highSeason.vehicles.map(([label, price]) => (
+                  <tr>
+                    <th scope="row">{label}</th>
                     <td>{price}</td>
                   </tr>
                 ))

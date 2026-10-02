@@ -794,9 +794,47 @@ a:hover {
   margin-top: 0.75rem;
 }
 
-.price-card td {
-  padding: 0.4rem 0;
+.price-card thead th {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  text-align: left;
+  padding: 0 0 0.45rem;
+  border-bottom: 2px solid var(--sea-200);
+}
+
+.price-card thead th:last-child {
+  text-align: right;
+}
+
+.price-card .group-row th {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--sea-600);
+  text-align: left;
+  padding: 1rem 0 0.3rem;
   border-bottom: 1px solid var(--line);
+}
+
+.price-card td {
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.price-card tbody th {
+  font-weight: 500;
+  text-align: left;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.price-card tbody tr:last-child td,
+.price-card tbody tr:last-child th {
+  border-bottom: none;
 }
 
 .price-card td:last-child {
@@ -950,6 +988,12 @@ a:hover {
 }
 
 .footer-grid p { margin: 0.2rem 0; }
+
+.footer-vat {
+  font-size: 0.9rem;
+  color: var(--sea-200);
+  letter-spacing: 0.02em;
+}
 
 .footer-grid a {
   color: #fff;
