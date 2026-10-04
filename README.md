@@ -18,6 +18,9 @@ npm run preview  # anteprima locale della build
 
 Il contenuto di `dist/` è il sito da pubblicare (GitHub Pages).
 
+Il deploy è automatico: ogni push su `main` esegue `.github/workflows/deploy.yml`,
+che fa la build con `withastro/action` e pubblica `dist/` con `actions/deploy-pages`.
+
 Note di pubblicazione:
 
 - la home `/` è un redirect immediato verso `/it/` (meta refresh, unica opzione su hosting statico). Se l'hosting permette redirect lato server, configurare un 301 da `/` a `/it/`; `/` è escluso dalla sitemap.
