@@ -75,8 +75,11 @@ const it = {
     explore: 'Scopri',
     bookNow: 'Richiedi disponibilità',
     callNow: 'Chiama ora',
+    mapLoad: 'Mostra la mappa',
     mapOpen: 'Apri in Google Maps',
     morePhotos: 'Mostra altre foto',
+    mapNotice:
+      'La mappa è ospitata da Google Maps: caricandola accetti la sua informativa privacy.',
   },
   home: {
     heroTitle: 'Camping Lido Valderice',
@@ -344,8 +347,10 @@ const en: Ui = {
     explore: 'Explore',
     bookNow: 'Check availability',
     callNow: 'Call now',
+    mapLoad: 'Show the map',
     mapOpen: 'Open in Google Maps',
     morePhotos: 'Show more photos',
+    mapNotice: 'The map is hosted by Google Maps: loading it accepts their privacy policy.',
   },
   home: {
     heroTitle: 'Camping Lido Valderice',
@@ -611,8 +616,11 @@ const de: Ui = {
     explore: 'Entdecken',
     bookNow: 'Verfügbarkeit anfragen',
     callNow: 'Jetzt anrufen',
+    mapLoad: 'Karte anzeigen',
     mapOpen: 'In Google Maps öffnen',
     morePhotos: 'Weitere Fotos anzeigen',
+    mapNotice:
+      'Die Karte wird von Google Maps bereitgestellt: Beim Laden akzeptieren Sie deren Datenschutzerklärung.',
   },
   home: {
     heroTitle: 'Camping Lido Valderice',
@@ -878,8 +886,11 @@ const fr: Ui = {
     explore: 'Découvrir',
     bookNow: 'Demander la disponibilité',
     callNow: 'Appeler maintenant',
+    mapLoad: 'Afficher la carte',
     mapOpen: 'Ouvrir dans Google Maps',
     morePhotos: 'Afficher plus de photos',
+    mapNotice:
+      'La carte est hébergée par Google Maps : en la chargeant, vous acceptez sa politique de confidentialité.',
   },
   home: {
     heroTitle: 'Camping Lido Valderice',

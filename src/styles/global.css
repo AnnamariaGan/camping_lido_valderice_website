@@ -906,14 +906,65 @@ a:hover {
 .contact-card strong { color: var(--sea-900); }
 
 .map-block {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
+  position: relative;
 }
 
-.map-open-row { margin: 0; }
+.map-preview {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.map-preview img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* Overlay di consenso sopra la mappa statica, in trasparenza */
+.map-consent {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.75rem;
+  text-align: center;
+  background: rgb(11 45 77 / 0.62);
+  border-radius: var(--radius-lg);
+  color: #fff;
+}
+
+.map-consent[hidden] { display: none; }
+
+.map-notice {
+  margin: 0;
+  max-width: 30rem;
+  font-size: 0.95rem;
+}
+
+.map-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0;
+}
 
 .map-open { font-weight: 600; }
+
+.map-consent .map-open { color: #fff; }
+
+.map-consent .map-open:hover { color: var(--sea-200); }
 
 .map-frame {
   border: 0;

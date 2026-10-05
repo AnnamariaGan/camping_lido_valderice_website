@@ -5,6 +5,7 @@ import Hero from '../../components/Hero.astro';
 import type { RouteKey } from '../../i18n/config';
 import { ui } from '../../i18n/ui';
 import heroContatti from '../../assets/hero-contatti.webp';
+import mapStatic from '../../assets/map-static.webp';
 
 export function getStaticPaths() {
   return locales.map((lang) => ({ params: { lang }, props: { lang } }));
@@ -65,21 +66,84 @@ const mapEmbed =
           </ul>
         </div>
 
-        <div class="map-block">
-          <iframe
-            class="map-frame"
-            src={mapEmbed}
-            title={u.contatti.mapTitle}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            allowFullscreen
-          ></iframe>
-          <p class="map-open-row">
-            <a class="map-open" href={mapLink} target="_blank" rel="noopener">{u.common.mapOpen}</a>
-          </p>
+        <div class="map-block" data-map-src={mapEmbed} data-map-title={u.contatti.mapTitle}>
+          <button
+            type="button"
+            class="map-preview"
+            aria-expanded="false"
+            aria-controls="map-consent"
+            aria-label={u.contatti.mapTitle}
+          >
+            <img src={mapStatic.src} alt="" width="1024" height="768" loading="lazy" decoding="async" />
+          </button>
+          <div class="map-consent" id="map-consent" hidden>
+            <p class="map-notice">{u.common.mapNotice}</p>
+            <p class="map-actions">
+              <button type="button" class="btn" data-map-load>{u.common.mapLoad}</button>
+              <a class="map-open" href={mapLink} target="_blank" rel="noopener">{u.common.mapOpen}</a>
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 </Base>
+
+<script is:inline>
+  (() => {
+    const block = document.querySelector('[data-map-src]');
+    if (!block) return;
+    const CONSENT_KEY = 'clv-map-consent';
+    const preview = block.querySelector('.map-preview');
+    const panel = block.querySelector('.map-consent');
+    let loaded = false;
+
+    const loadMap = () => {
+      if (loaded) return;
+      loaded = true;
+      const frame = document.createElement('iframe');
+      frame.className = 'map-frame';
+      frame.src = block.dataset.mapSrc;
+      frame.title = block.dataset.mapTitle;
+      frame.loading = 'lazy';
+      frame.referrerPolicy = 'no-referrer-when-downgrade';
+      frame.allowFullscreen = true;
+      block.replaceChildren(frame);
+      try {
+        localStorage.setItem(CONSENT_KEY, '1');
+      } catch {}
+    };
+
+    const showConsent = () => {
+      if (loaded) return;
+      preview.setAttribute('aria-expanded', 'true');
+      panel.hidden = false;
+    };
+
+    const hideConsent = () => {
+      if (loaded) return;
+      preview.setAttribute('aria-expanded', 'false');
+      panel.hidden = true;
+    };
+
+    preview.addEventListener('click', showConsent);
+
+    // Perdita del focus (tastiera) o clic fuori dal riquadro: torna la sola immagine statica.
+    block.addEventListener('focusout', (event) => {
+      if (!block.contains(event.relatedTarget)) hideConsent();
+    });
+    document.addEventListener('click', (event) => {
+      if (panel.hidden === false && !block.contains(event.target)) hideConsent();
+    });
+
+    block.querySelector('[data-map-load]').addEventListener('click', loadMap);
+    block.querySelector('.map-open').addEventListener('click', hideConsent);
+
+    let consented = false;
+    try {
+      consented = localStorage.getItem(CONSENT_KEY) === '1';
+    } catch {}
+    if (consented) loadMap();
+  })();
+</script>
 
