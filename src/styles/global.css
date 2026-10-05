@@ -968,14 +968,33 @@ a:hover {
 
 .map-consent .map-open:hover { color: var(--sea-200); }
 
-.map-frame {
-  border: 0;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
-  width: 100%;
+/* Durante il caricamento dell'embed, l'immagine statica copre il box */
+.map-live {
+  position: relative;
   aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
   background: var(--sea-100);
 }
+
+.map-live img,
+.map-live iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.map-live img { object-fit: cover; }
+
+.map-live iframe {
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.map-live.loaded iframe { opacity: 1; }
 
 /* ---------- Footer ---------- */
 

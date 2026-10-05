@@ -69,7 +69,7 @@ const mapEmbed =
           </ul>
         </div>
 
-        <div class="map-block" data-map-src={mapEmbed} data-map-title={u.contatti.mapTitle}>
+        <div class="map-block" data-map-src={mapEmbed} data-map-img={mapStatic.src} data-map-title={u.contatti.mapTitle}>
           <button
             type="button"
             class="map-preview"
@@ -104,14 +104,25 @@ const mapEmbed =
     const loadMap = () => {
       if (loaded) return;
       loaded = true;
+      // L'immagine statica resta visibile finché l'embed Google non ha finito di caricarsi.
+      const live = document.createElement('div');
+      live.className = 'map-live';
+      const img = document.createElement('img');
+      img.src = block.dataset.mapImg;
+      img.alt = '';
+      img.decoding = 'async';
       const frame = document.createElement('iframe');
-      frame.className = 'map-frame';
       frame.src = block.dataset.mapSrc;
       frame.title = block.dataset.mapTitle;
       frame.loading = 'lazy';
       frame.referrerPolicy = 'no-referrer-when-downgrade';
       frame.allowFullscreen = true;
-      block.replaceChildren(frame);
+      frame.addEventListener('load', () => {
+        live.classList.add('loaded');
+        setTimeout(() => img.remove(), 500);
+      });
+      live.append(img, frame);
+      block.replaceChildren(live);
       try {
         localStorage.setItem(CONSENT_KEY, '1');
       } catch {}
