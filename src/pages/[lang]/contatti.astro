@@ -65,10 +65,16 @@ const mapEmbed =
           </ul>
         </div>
 
-        <div class="map-embed" data-map-src={mapEmbed} data-map-title={u.contatti.mapTitle}>
-          <p class="map-notice">{u.common.mapNotice}</p>
-          <p class="map-actions">
-            <button type="button" class="btn" data-map-load>{u.common.mapLoad}</button>
+        <div class="map-block">
+          <iframe
+            class="map-frame"
+            src={mapEmbed}
+            title={u.contatti.mapTitle}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullscreen
+          ></iframe>
+          <p class="map-open-row">
             <a class="map-open" href={mapLink} target="_blank" rel="noopener">{u.common.mapOpen}</a>
           </p>
         </div>
@@ -77,22 +83,3 @@ const mapEmbed =
   </section>
 </Base>
 
-<script is:inline>
-  for (const button of document.querySelectorAll('[data-map-load]')) {
-    button.addEventListener(
-      'click',
-      () => {
-        const box = button.closest('[data-map-src]');
-        const frame = document.createElement('iframe');
-        frame.className = 'map-frame';
-        frame.src = box.dataset.mapSrc;
-        frame.title = box.dataset.mapTitle;
-        frame.loading = 'lazy';
-        frame.referrerPolicy = 'no-referrer-when-downgrade';
-        frame.allowFullscreen = true;
-        box.replaceWith(frame);
-      },
-      { once: true }
-    );
-  }
-</script>
