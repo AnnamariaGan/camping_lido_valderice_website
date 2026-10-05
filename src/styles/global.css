@@ -868,7 +868,9 @@ a:hover {
 /* Email e numeri lunghi non devono allargare la pagina su schermi stretti */
 .contact-row { overflow-wrap: anywhere; }
 
-.contact-note { color: var(--ink-soft); }
+.contact-row a:hover svg {
+  color: var(--sea-600);
+}
 
 .price-note {
   color: var(--ink-soft);
